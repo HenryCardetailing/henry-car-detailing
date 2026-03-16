@@ -50,8 +50,9 @@ export default function App() {
               <div className="brand-badge">Henry Car Detailing</div>
               <h1>Professional detailing that makes your car feel new again.</h1>
               <p>
-                Exterior washes, deep interior cleaning, shampoo extraction, headlight restoration,
-                and premium detail packages for local drivers.
+                Henry Car Detailing provides reliable exterior washes, interior cleaning, shampoo
+                extraction, headlight restoration, and premium detailing for drivers in Jurupa
+                Valley and Riverside.
               </p>
 
               <div className="hero-buttons">
@@ -130,15 +131,14 @@ export default function App() {
             <p className="eyebrow">Contact</p>
             <h2>Ready to book?</h2>
             <p>
-              Add your phone number, Instagram, and service area here so local customers can reach
-              you fast.
+              Reach out today to schedule your detail and get your vehicle looking clean, fresh,
+              and protected.
             </p>
           </div>
 
           <div className="contact-card">
-            <p><strong>Phone:</strong> (Your number here)</p>
-            <p><strong>Instagram:</strong> @henrycardetailing</p>
-            <p><strong>Service Area:</strong> Jurupa Valley / Mira Loma</p>
+            <p><strong>Phone:</strong> 951-332-1957</p>
+            <p><strong>Service Area:</strong> Jurupa Valley / Riverside</p>
             <p><strong>Availability:</strong> By appointment</p>
           </div>
         </div>
