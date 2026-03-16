@@ -48,16 +48,16 @@ export default function App() {
           <div className="hero-grid">
             <div>
               <div className="brand-badge">Henry Car Detailing</div>
-              <h1>Professional detailing that makes your car feel new again.</h1>
+              <h1>Premium car detailing with results you can see right away.</h1>
               <p>
-                Henry Car Detailing provides reliable exterior washes, interior cleaning, shampoo
-                extraction, headlight restoration, and premium detailing for drivers in Jurupa
-                Valley and Riverside.
+                From refined exterior washes to deep interior care, Henry Car Detailing delivers
+                polished, high-quality service for drivers in Jurupa Valley and Riverside who want
+                their vehicle to look its absolute best.
               </p>
 
               <div className="hero-buttons">
-                <a href="#services" className="btn btn-primary">View Services</a>
-                <a href="#contact" className="btn btn-secondary">Contact Me</a>
+                <a href="#services" className="btn btn-primary">Explore Services</a>
+                <a href="#contact" className="btn btn-secondary">Book Your Detail</a>
               </div>
             </div>
 
@@ -102,24 +102,24 @@ export default function App() {
       <section className="info-band">
         <div className="info-grid">
           <div className="info-card">
-            <h3>Why customers book</h3>
+            <h3>Quality you can see</h3>
             <p>
-              Convenient local service, honest pricing, and detail work that focuses on visible
-              results customers actually notice.
+              Every detail is done with care so your vehicle looks cleaner, glossier, and better
+              cared for than a quick drive-through wash can deliver.
             </p>
           </div>
           <div className="info-card">
-            <h3>Great starter offer</h3>
+            <h3>Honest pricing, real value</h3>
             <p>
-              Promote a basic wash, interior refresh, or headlight restoration to attract
-              first-time clients.
+              You get hands-on service, attention to the small details, and results that make the
+              price worth it from the moment you see your car finished.
             </p>
           </div>
           <div className="info-card">
-            <h3>Built to grow</h3>
+            <h3>Local service you can trust</h3>
             <p>
-              As you add before-and-after photos, reviews, and booking info, this can become a
-              strong lead generator for your business.
+              Henry Car Detailing serves Jurupa Valley and Riverside with dependable appointment
+              service focused on making every customer feel like their car got premium treatment.
             </p>
           </div>
         </div>
