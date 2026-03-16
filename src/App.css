@@ -164,6 +164,100 @@
   color: #475569;
 }
 
+.results {
+  padding-top: 24px;
+}
+
+.results-list {
+  display: grid;
+  gap: 22px;
+}
+
+.result-card {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 24px;
+  align-items: center;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid #e2e8f0;
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.07);
+}
+
+.result-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.result-photo {
+  min-height: 250px;
+  border-radius: 24px;
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  border: 1px solid rgba(255,255,255,0.35);
+  overflow: hidden;
+}
+
+.result-photo-before {
+  background: linear-gradient(160deg, #475569 0%, #1e293b 100%);
+}
+
+.result-photo-after {
+  background: linear-gradient(160deg, #f59e0b 0%, #f8fafc 45%, #1e293b 100%);
+}
+
+.result-photo.interior.result-photo-before {
+  background: linear-gradient(160deg, #334155 0%, #111827 100%);
+}
+
+.result-photo.interior.result-photo-after {
+  background: linear-gradient(160deg, #f8fafc 0%, #cbd5e1 42%, #0f172a 100%);
+}
+
+.result-photo.exterior.result-photo-before {
+  background: linear-gradient(160deg, #1f2937 0%, #0f172a 100%);
+}
+
+.result-photo.exterior.result-photo-after {
+  background: linear-gradient(160deg, #fde68a 0%, #ffffff 38%, #1e293b 100%);
+}
+
+.result-photo.detail.result-photo-before {
+  background: linear-gradient(160deg, #52525b 0%, #18181b 100%);
+}
+
+.result-photo.detail.result-photo-after {
+  background: linear-gradient(160deg, #e2e8f0 0%, #ffffff 45%, #334155 100%);
+}
+
+.photo-tag {
+  display: inline-flex;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.85);
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.result-copy h3 {
+  margin: 0 0 14px;
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+.result-copy p {
+  margin: 0;
+  color: #475569;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
 .info-band {
   padding: 20px;
 }
@@ -220,12 +314,17 @@
   .contact-inner,
   .section-header,
   .services-grid,
-  .info-grid {
+  .info-grid,
+  .result-card {
     grid-template-columns: 1fr;
     display: grid;
   }
 
   .highlight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .result-photos {
     grid-template-columns: 1fr;
   }
 

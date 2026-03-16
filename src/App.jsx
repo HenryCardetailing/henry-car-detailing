@@ -41,6 +41,33 @@ export default function App() {
     'Serving Jurupa Valley and Riverside',
   ]
 
+  const transformations = [
+    {
+      title: 'Interior refresh that feels brand new',
+      blurb:
+        'From dusty dashboards to stained seats, deep interior work helps restore a cleaner, fresher cabin that customers notice right away.',
+      before: 'Before',
+      after: 'After',
+      theme: 'interior',
+    },
+    {
+      title: 'Exterior gloss that stands out',
+      blurb:
+        'A proper hand wash and finish brings back depth, shine, and a cleaner overall look that stands above a basic wash.',
+      before: 'Dull finish',
+      after: 'Premium shine',
+      theme: 'exterior',
+    },
+    {
+      title: 'Details that make the difference',
+      blurb:
+        'Clean trim, clear glass, and carefully finished surfaces help your vehicle look well-kept from every angle.',
+      before: 'Needs attention',
+      after: 'Dialed in',
+      theme: 'detail',
+    },
+  ]
+
   return (
     <div className="site">
       <section className="hero">
@@ -97,6 +124,41 @@ export default function App() {
                 </div>
                 <p>{service.desc}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="results section">
+        <div className="section-inner">
+          <div className="section-header">
+            <div>
+              <p className="eyebrow">Results</p>
+              <h2>Before and after work customers can actually see</h2>
+            </div>
+            <p>
+              A strong detail should be visible at a glance. This section is built to showcase the
+              kind of transformation that helps customers trust the quality before they even call.
+            </p>
+          </div>
+
+          <div className="results-list">
+            {transformations.map((item) => (
+              <article key={item.title} className="result-card">
+                <div className="result-photos">
+                  <div className={`result-photo result-photo-before ${item.theme}`}>
+                    <span className="photo-tag">{item.before}</span>
+                  </div>
+                  <div className={`result-photo result-photo-after ${item.theme}`}>
+                    <span className="photo-tag">{item.after}</span>
+                  </div>
+                </div>
+
+                <div className="result-copy">
+                  <h3>{item.title}</h3>
+                  <p>{item.blurb}</p>
+                </div>
+              </article>
             ))}
           </div>
         </div>
