@@ -35,10 +35,10 @@ export default function App() {
   ]
 
   const highlights = [
-    'Mobile-friendly local service',
-    'Interior shampoo extraction available',
+    'Premium hand-finished detailing',
+    'Deep interior cleaning and extraction',
     'Paint enhancement and protection options',
-    'Friendly pricing for Jurupa Valley / Mira Loma area',
+    'Serving Jurupa Valley and Riverside',
   ]
 
   return (
@@ -48,7 +48,10 @@ export default function App() {
           <div className="hero-grid">
             <div>
               <div className="brand-badge">Henry Car Detailing</div>
-              <h1>Premium car detailing with results you can see right away.</h1>
+              <h1>
+                Henry Car Detailing
+                <span className="hero-title-accent">Premium shine. Deep clean results. Care your vehicle deserves.</span>
+              </h1>
               <p>
                 From refined exterior washes to deep interior care, Henry Car Detailing delivers
                 polished, high-quality service for drivers in Jurupa Valley and Riverside who want
