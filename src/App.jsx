@@ -176,6 +176,31 @@ export default function App() {
     'Any add-ons like headlights, trim, or extraction',
   ]
 
+  const processSteps = [
+    {
+      step: '01',
+      title: 'Request your quote',
+      text: 'Send your vehicle info and the service you want through the callback form.',
+    },
+    {
+      step: '02',
+      title: 'Confirm the details',
+      text: 'I reach out, confirm pricing, and make sure the service matches your vehicle condition.',
+    },
+    {
+      step: '03',
+      title: 'Get the detail done',
+      text: 'Your vehicle gets cleaned with real attention to the finish, not rushed through a basic wash.',
+    },
+  ]
+
+  const trustPoints = [
+    'Now operating as an LLC',
+    'Local mobile detailing service',
+    'Quotes confirmed before work starts',
+    'Serving Jurupa Valley and Riverside',
+  ]
+
   const transformations = [
     {
       title: 'Rear view transformation',
@@ -367,6 +392,14 @@ export default function App() {
         </div>
       </section>
 
+      <section className="trust-strip">
+        <div className="section-inner trust-strip-inner">
+          {trustPoints.map((item) => (
+            <div key={item} className="trust-pill">{item}</div>
+          ))}
+        </div>
+      </section>
+
       <section id="services" className="section">
         <div className="section-inner">
           <div className="section-header">
@@ -453,6 +486,31 @@ export default function App() {
                   </div>
                 )}
               </section>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="process section">
+        <div className="section-inner">
+          <div className="section-header">
+            <div>
+              <p className="eyebrow">How It Works</p>
+              <h2>Easy to book, clear from the start, and built around your vehicle</h2>
+            </div>
+            <p>
+              Customers are more likely to reach out when the process feels simple. This keeps
+              everything clear from the first message to the finished detail.
+            </p>
+          </div>
+
+          <div className="process-grid">
+            {processSteps.map((item) => (
+              <article key={item.step} className="process-card">
+                <p className="process-step">{item.step}</p>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
             ))}
           </div>
         </div>
@@ -644,6 +702,11 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      <div className="mobile-cta">
+        <a href="tel:9513321957" className="mobile-cta-link mobile-cta-call">Call Now</a>
+        <a href="#contact" className="mobile-cta-link mobile-cta-book">Book Online</a>
+      </div>
     </div>
   )
 }

@@ -183,6 +183,32 @@
   padding: 60px 20px;
 }
 
+.trust-strip {
+  padding: 0 20px 10px;
+  margin-top: -22px;
+  position: relative;
+  z-index: 2;
+}
+
+.trust-strip-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.trust-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 999px;
+  background: white;
+  border: 1px solid #dbeafe;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  color: #0f172a;
+  font-size: 14px;
+  font-weight: 700;
+}
+
 .section-header {
   display: flex;
   justify-content: space-between;
@@ -363,6 +389,45 @@
 
 .results {
   padding-top: 24px;
+}
+
+.process {
+  padding-top: 24px;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.process-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+}
+
+.process-step {
+  margin: 0 0 14px;
+  color: #38bdf8;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.process-card h3 {
+  margin: 0 0 12px;
+  font-size: 24px;
+  line-height: 1.15;
+}
+
+.process-card p:last-child {
+  margin: 0;
+  color: #475569;
+  line-height: 1.65;
 }
 
 .results-list {
@@ -573,11 +638,16 @@
   cursor: wait;
 }
 
+.mobile-cta {
+  display: none;
+}
+
 @media (max-width: 900px) {
   .hero-grid,
   .contact-inner,
   .section-header,
   .services-grid,
+  .process-grid,
   .info-grid,
   .result-card,
   .service-highlight-layout {
@@ -612,5 +682,45 @@
 
   .hero-panel h2 {
     font-size: 24px;
+  }
+
+  .mobile-cta {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 22px;
+    background: rgba(15, 23, 42, 0.92);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.3);
+    backdrop-filter: blur(10px);
+    z-index: 20;
+  }
+
+  .mobile-cta-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 48px;
+    border-radius: 16px;
+    text-decoration: none;
+    font-weight: 800;
+  }
+
+  .mobile-cta-call {
+    background: white;
+    color: #0f172a;
+  }
+
+  .mobile-cta-book {
+    background: #38bdf8;
+    color: #082f49;
+  }
+
+  .contact {
+    padding-bottom: 130px;
   }
 }
