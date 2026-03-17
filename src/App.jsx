@@ -54,6 +54,17 @@ export default function App() {
       altAfter: 'Clean rear view of a black Chevrolet Cruze after detailing',
     },
     {
+      title: 'Interior refresh customers notice fast',
+      blurb:
+        'Dust, debris, and everyday buildup were cleaned out to leave the cabin looking sharper, fresher, and much better cared for.',
+      before: 'Dirty',
+      after: 'Clean',
+      beforeImage: '/Cruze_backseat_dirty.jpg',
+      afterImage: '/Cruze_backseat_clean.jpg',
+      altBefore: 'Dirty back seat area of a Chevrolet Cruze before detailing',
+      altAfter: 'Clean back seat area of a Chevrolet Cruze after detailing',
+    },
+    {
       title: 'Front end brought back to life',
       blurb:
         'This front-end cleanup shows the difference a careful wash and finish can make when the paint and glass are properly refreshed.',
@@ -78,9 +89,26 @@ export default function App() {
           alt: 'Restored headlight on a black Chevrolet Cruze',
         },
         {
-          src: '/Odyssey_headlights_passanger.jpg',
+          src: '/Odyssey_headlight_driver.jpg',
           label: 'White car headlight',
-          alt: 'Restored headlight on a white Honda Odyssey',
+          alt: 'Restored driver-side headlight on a white Honda Odyssey',
+        },
+      ],
+    },
+    {
+      title: 'Finished details that elevate the whole car',
+      blurb:
+        'Clean side panels, bright trim, and a more polished overall finish help the vehicle look cared for from every angle, not just up close.',
+      images: [
+        {
+          src: '/Cruze_passanger_clean.jpg',
+          label: 'Clean side view',
+          alt: 'Clean passenger-side view of a black Chevrolet Cruze after detailing',
+        },
+        {
+          src: '/Cruze_passwheel_clean.jpg',
+          label: 'Dialed-in finish',
+          alt: 'Detailed passenger-side wheel and body finish on a black Chevrolet Cruze',
         },
       ],
     },
