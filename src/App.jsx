@@ -590,6 +590,34 @@ export default function App() {
         </div>
       </section>
 
+      <section className="about section">
+        <div className="section-inner about-inner">
+          <div className="about-copy">
+            <p className="eyebrow">About</p>
+            <h2>A local detailing business built around careful work and honest service</h2>
+            <p>
+              Henry Car Detailing is a local, owner-operated LLC focused on giving each vehicle the
+              kind of attention that makes a real difference when you see it finished.
+            </p>
+            <p>
+              Whether your vehicle needs a simple refresh or a deeper cleanup, the goal is always
+              the same: straightforward service, clear pricing, and results that make your vehicle
+              feel cleaner, fresher, and better cared for.
+            </p>
+          </div>
+
+          <div className="about-card">
+            <h3>What you can expect</h3>
+            <ul className="about-list">
+              <li>Owner-operated local service</li>
+              <li>Clear quotes before the work starts</li>
+              <li>Real attention to the small details</li>
+              <li>Appointments built around your vehicle’s needs</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <section className="faq section">
         <div className="section-inner">
           <div className="section-header">
