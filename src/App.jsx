@@ -43,28 +43,46 @@ export default function App() {
 
   const transformations = [
     {
-      title: 'Interior refresh that feels brand new',
+      title: 'Rear view transformation',
       blurb:
-        'From dusty dashboards to stained seats, deep interior work helps restore a cleaner, fresher cabin that customers notice right away.',
-      before: 'Before',
-      after: 'After',
-      theme: 'interior',
+        'Heavy dust and buildup were removed to bring back a cleaner finish and a much sharper presentation from the same angle.',
+      before: 'Dirty',
+      after: 'Clean',
+      beforeImage: '/Cruze_back_dirty.jpg',
+      afterImage: '/Cruze_Back_Clean.jpg',
+      altBefore: 'Dirty rear view of a black Chevrolet Cruze before detailing',
+      altAfter: 'Clean rear view of a black Chevrolet Cruze after detailing',
     },
     {
-      title: 'Exterior gloss that stands out',
+      title: 'Front end brought back to life',
       blurb:
-        'A proper hand wash and finish brings back depth, shine, and a cleaner overall look that stands above a basic wash.',
-      before: 'Dull finish',
-      after: 'Premium shine',
-      theme: 'exterior',
+        'This front-end cleanup shows the difference a careful wash and finish can make when the paint and glass are properly refreshed.',
+      before: 'Dirty',
+      after: 'Clean',
+      beforeImage: '/Cruze_front_dirty.jpg',
+      afterImage: '/Cruze_Front_clean.jpg',
+      altBefore: 'Dirty front view of a black Chevrolet Cruze before detailing',
+      altAfter: 'Clean front view of a black Chevrolet Cruze after detailing',
     },
+  ]
+
+  const spotlightShots = [
     {
-      title: 'Details that make the difference',
+      title: 'Headlight restoration examples',
       blurb:
-        'Clean trim, clear glass, and carefully finished surfaces help your vehicle look well-kept from every angle.',
-      before: 'Needs attention',
-      after: 'Dialed in',
-      theme: 'detail',
+        'Both of these headlight restorations show how clearer lenses can instantly make a vehicle look newer, cleaner, and better cared for.',
+      images: [
+        {
+          src: '/Cruze_Headlight_passanger.jpg',
+          label: 'Black car headlight',
+          alt: 'Restored headlight on a black Chevrolet Cruze',
+        },
+        {
+          src: '/Odyssey_headlights_passanger.jpg',
+          label: 'White car headlight',
+          alt: 'Restored headlight on a white Honda Odyssey',
+        },
+      ],
     },
   ]
 
@@ -146,12 +164,32 @@ export default function App() {
             {transformations.map((item) => (
               <article key={item.title} className="result-card">
                 <div className="result-photos">
-                  <div className={`result-photo result-photo-before ${item.theme}`}>
+                  <div className="result-photo-frame">
+                    <img className="result-photo-image" src={item.beforeImage} alt={item.altBefore} />
                     <span className="photo-tag">{item.before}</span>
                   </div>
-                  <div className={`result-photo result-photo-after ${item.theme}`}>
+                  <div className="result-photo-frame">
+                    <img className="result-photo-image" src={item.afterImage} alt={item.altAfter} />
                     <span className="photo-tag">{item.after}</span>
                   </div>
+                </div>
+
+                <div className="result-copy">
+                  <h3>{item.title}</h3>
+                  <p>{item.blurb}</p>
+                </div>
+              </article>
+            ))}
+
+            {spotlightShots.map((item) => (
+              <article key={item.title} className="result-card">
+                <div className="result-photos">
+                  {item.images.map((image) => (
+                    <div key={image.src} className="result-photo-frame">
+                      <img className="result-photo-image" src={image.src} alt={image.alt} />
+                      <span className="photo-tag">{image.label}</span>
+                    </div>
+                  ))}
                 </div>
 
                 <div className="result-copy">
