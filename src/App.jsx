@@ -1,6 +1,22 @@
+import { useState } from 'react'
 import './App.css'
 
 export default function App() {
+  const webhookUrl =
+    import.meta.env.VITE_BOOKING_WEBHOOK_URL ||
+    'https://script.google.com/macros/s/AKfycbwSepdK63XRnvnqV96S7A7fa_VheKrhbHvZdrMP4X5v5_gxf9mii63tMkFG4OrXxL9tDA/exec'
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    vehicle: '',
+    service: '',
+    preferredTime: '',
+    notes: '',
+    company: '',
+  })
+  const [status, setStatus] = useState({ type: '', message: '' })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
   const services = [
     {
       name: 'Basic Exterior Wash',
@@ -125,6 +141,75 @@ export default function App() {
       ],
     },
   ]
+
+  const handleChange = (event) => {
+    const { name, value } = event.target
+    setFormData((current) => ({ ...current, [name]: value }))
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+
+    if (!webhookUrl) {
+      setStatus({
+        type: 'error',
+        message: 'Add your Google Sheets webhook first, then this form will start saving leads.',
+      })
+      return
+    }
+
+    if (formData.company) {
+      setStatus({
+        type: 'success',
+        message: 'Thanks. Your request was sent.',
+      })
+      return
+    }
+
+    setIsSubmitting(true)
+    setStatus({ type: '', message: '' })
+
+    try {
+      await fetch(webhookUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8',
+        },
+        body: JSON.stringify({
+          submittedAt: new Date().toISOString(),
+          name: formData.name,
+          phone: formData.phone,
+          vehicle: formData.vehicle,
+          service: formData.service,
+          preferredTime: formData.preferredTime,
+          notes: formData.notes,
+          source: 'Henry Car Detailing Website',
+        }),
+      })
+
+      setStatus({
+        type: 'success',
+        message: 'Thanks. Your request was sent and you can follow up from your Google Sheet.',
+      })
+      setFormData({
+        name: '',
+        phone: '',
+        vehicle: '',
+        service: '',
+        preferredTime: '',
+        notes: '',
+        company: '',
+      })
+    } catch {
+      setStatus({
+        type: 'error',
+        message: 'Something went wrong while sending the form. Please call or text instead.',
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <div className="site">
@@ -287,17 +372,102 @@ export default function App() {
         <div className="contact-inner">
           <div className="contact-copy">
             <p className="eyebrow">Contact</p>
-            <h2>Ready to book?</h2>
+            <h2>Request a callback</h2>
             <p>
-              Reach out today to schedule your detail and get your vehicle looking clean, fresh,
-              and protected.
+              Fill out the form and your request can go straight into your lead sheet so you can
+              call customers back quickly and keep track of new bookings.
             </p>
+
+            <div className="contact-details">
+              <p><strong>Phone:</strong> 951-332-1957</p>
+              <p><strong>Service Area:</strong> Jurupa Valley / Riverside</p>
+              <p><strong>Availability:</strong> By appointment</p>
+            </div>
           </div>
 
           <div className="contact-card">
-            <p><strong>Phone:</strong> 951-332-1957</p>
-            <p><strong>Service Area:</strong> Jurupa Valley / Riverside</p>
-            <p><strong>Availability:</strong> By appointment</p>
+            <form className="lead-form" onSubmit={handleSubmit}>
+              <div className="form-grid">
+                <label className="form-field">
+                  <span>Name</span>
+                  <input name="name" value={formData.name} onChange={handleChange} required />
+                </label>
+
+                <label className="form-field">
+                  <span>Phone number</span>
+                  <input
+                    name="phone"
+                    type="tel"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="951-555-1234"
+                    required
+                  />
+                </label>
+
+                <label className="form-field">
+                  <span>Vehicle</span>
+                  <input
+                    name="vehicle"
+                    value={formData.vehicle}
+                    onChange={handleChange}
+                    placeholder="Year, make, model"
+                  />
+                </label>
+
+                <label className="form-field">
+                  <span>Service wanted</span>
+                  <select name="service" value={formData.service} onChange={handleChange} required>
+                    <option value="">Choose a service</option>
+                    {services.map((service) => (
+                      <option key={service.name} value={service.name}>
+                        {service.name}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              </div>
+
+              <label className="form-field">
+                <span>Best time to reach you</span>
+                <input
+                  name="preferredTime"
+                  value={formData.preferredTime}
+                  onChange={handleChange}
+                  placeholder="Weekday afternoons, evenings, etc."
+                />
+              </label>
+
+              <label className="form-field">
+                <span>Extra details</span>
+                <textarea
+                  name="notes"
+                  value={formData.notes}
+                  onChange={handleChange}
+                  rows="4"
+                  placeholder="Tell me about your vehicle, condition, or what you want done."
+                />
+              </label>
+
+              <label className="form-field form-field-hidden" aria-hidden="true">
+                <span>Company</span>
+                <input
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange}
+                  tabIndex="-1"
+                  autoComplete="off"
+                />
+              </label>
+
+              {status.message ? (
+                <p className={`form-status form-status-${status.type}`}>{status.message}</p>
+              ) : null}
+
+              <button className="btn btn-primary form-submit" type="submit" disabled={isSubmitting}>
+                {isSubmitting ? 'Sending...' : 'Send Request'}
+              </button>
+            </form>
           </div>
         </div>
       </section>
