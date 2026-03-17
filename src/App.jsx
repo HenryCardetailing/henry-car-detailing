@@ -169,6 +169,13 @@ export default function App() {
     },
   ]
 
+  const quoteReasons = [
+    'Vehicle size and overall condition',
+    'Pet hair, stains, or heavy buildup',
+    'How deep the interior or exterior needs to be cleaned',
+    'Any add-ons like headlights, trim, or extraction',
+  ]
+
   const transformations = [
     {
       title: 'Rear view transformation',
@@ -380,26 +387,71 @@ export default function App() {
                   <p className="service-group-label">{group.label}</p>
                 </div>
 
-                <div className="services-grid">
-                  {group.items.map((service) => (
-                    <div
-                      key={service.name}
-                      className={`service-card${service.featured ? ' service-card-featured' : ''}`}
-                    >
-                      <div className="service-top">
-                        <h3>{service.name}</h3>
-                        <span className="price-pill">{service.price}</span>
-                      </div>
-                      <p className="service-time">{service.time}</p>
-                      <p>{service.desc}</p>
-                      <ul className="service-list">
-                        {service.includes.map((item) => (
+                {group.label === 'Most Popular' ? (
+                  <div className="service-highlight-layout">
+                    <div className="services-grid services-grid-featured">
+                      {group.items.map((service) => (
+                        <div
+                          key={service.name}
+                          className={`service-card${service.featured ? ' service-card-featured' : ''}`}
+                        >
+                          <div className="service-top">
+                            <h3>{service.name}</h3>
+                            <span className="price-pill">{service.price}</span>
+                          </div>
+                          <p className="service-time">{service.time}</p>
+                          <p>{service.desc}</p>
+                          <ul className="service-list">
+                            {service.includes.map((item) => (
+                              <li key={item}>{item}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+
+                    <aside className="service-aside">
+                      <p className="service-aside-label">Why customers choose this</p>
+                      <h3>Simple pricing, no guesswork, and a quote that matches your vehicle.</h3>
+                      <p>
+                        Starting prices keep things straightforward, and the final quote is based on
+                        what your vehicle actually needs, not random upsells.
+                      </p>
+
+                      <ul className="service-aside-list">
+                        {quoteReasons.map((item) => (
                           <li key={item}>{item}</li>
                         ))}
                       </ul>
-                    </div>
-                  ))}
-                </div>
+
+                      <div className="service-aside-note">
+                        <strong>Quick quote promise:</strong> I will confirm pricing before the job
+                        starts so you know exactly what to expect.
+                      </div>
+                    </aside>
+                  </div>
+                ) : (
+                  <div className="services-grid">
+                    {group.items.map((service) => (
+                      <div
+                        key={service.name}
+                        className={`service-card${service.featured ? ' service-card-featured' : ''}`}
+                      >
+                        <div className="service-top">
+                          <h3>{service.name}</h3>
+                          <span className="price-pill">{service.price}</span>
+                        </div>
+                        <p className="service-time">{service.time}</p>
+                        <p>{service.desc}</p>
+                        <ul className="service-list">
+                          {service.includes.map((item) => (
+                            <li key={item}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </section>
             ))}
           </div>
