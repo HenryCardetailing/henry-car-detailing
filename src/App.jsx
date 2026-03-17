@@ -35,10 +35,22 @@ export default function App() {
   ]
 
   const highlights = [
-    'Premium hand-finished detailing',
-    'Deep interior cleaning and extraction',
-    'Paint enhancement and protection options',
-    'Serving Jurupa Valley and Riverside',
+    {
+      title: 'Hand-finished care',
+      text: 'Premium detailing done with patience, not rushed through a tunnel wash.',
+    },
+    {
+      title: 'Interior reset',
+      text: 'Deep cleaning and extraction that makes the cabin feel fresher and cleaner.',
+    },
+    {
+      title: 'Paint glow',
+      text: 'Wash, enhancement, and protection options that bring back shine.',
+    },
+    {
+      title: 'Local and mobile',
+      text: 'Serving Jurupa Valley and Riverside by appointment.',
+    },
   ]
 
   const transformations = [
@@ -119,11 +131,12 @@ export default function App() {
       <section className="hero">
         <div className="hero-inner">
           <div className="hero-grid">
-            <div>
+            <div className="hero-copy">
               <div className="brand-badge">Henry Car Detailing</div>
+              <p className="hero-kicker">Mobile detailing for drivers who want their car to actually look cared for.</p>
               <h1>
-                Henry Car Detailing
-                <span className="hero-title-accent">Premium shine. Deep clean results. Care your vehicle deserves.</span>
+                Premium detailing that makes
+                <span className="hero-title-accent">daily drivers look worth showing off.</span>
               </h1>
               <p>
                 From refined exterior washes to deep interior care, Henry Car Detailing delivers
@@ -135,14 +148,28 @@ export default function App() {
                 <a href="#services" className="btn btn-primary">Explore Services</a>
                 <a href="#contact" className="btn btn-secondary">Book Your Detail</a>
               </div>
+
+              <div className="hero-microproof">
+                <span>Exterior wash</span>
+                <span>Interior deep clean</span>
+                <span>Headlight restoration</span>
+              </div>
             </div>
 
-            <div className="highlight-grid">
+            <div className="hero-panel">
+              <div className="hero-panel-intro">
+                <p className="hero-panel-label">Why people book</p>
+                <h2>Clean visuals, honest pricing, and results people notice fast.</h2>
+              </div>
+
+              <div className="highlight-grid">
               {highlights.map((item) => (
-                <div key={item} className="highlight-card">
-                  {item}
+                <div key={item.title} className="highlight-card">
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
                 </div>
               ))}
+              </div>
             </div>
           </div>
         </div>
