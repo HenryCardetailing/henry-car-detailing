@@ -701,11 +701,8 @@ export default function App() {
       <section className="page-hero">
         <div className="section-inner page-hero-inner">
           <p className="eyebrow">Mobile Service</p>
-          <h1>Professional mobile detailing that comes to your driveway, workplace, or approved appointment spot.</h1>
-          <p>
-            The goal is simple: make it easy for you to get your vehicle detailed without turning
-            your whole day into a drop-off and pickup process.
-          </p>
+          <h1>Mobile detailing that comes to you.</h1>
+          <p>Everything here is focused on how the appointment works and what to expect.</p>
         </div>
       </section>
 
@@ -786,11 +783,8 @@ export default function App() {
       <section className="page-hero page-hero-light">
         <div className="section-inner page-hero-inner">
           <p className="eyebrow">Results</p>
-          <h1>Real work, real before-and-after improvement, and details customers can actually notice.</h1>
-          <p>
-            This page keeps the proof in one place, so customers can quickly see the quality of the
-            work before reaching out.
-          </p>
+          <h1>Before-and-after results.</h1>
+          <p>A quick look at the kind of cleanup and finish you can expect.</p>
         </div>
       </section>
       <ResultsSection />
@@ -802,11 +796,8 @@ export default function App() {
       <section className="page-hero page-hero-light">
         <div className="section-inner page-hero-inner">
           <p className="eyebrow">Contact</p>
-          <h1>Request a quote, ask a question, or book your detail.</h1>
-          <p>
-            Fill out the form and I will reach out as soon as possible to confirm your vehicle,
-            service, pricing, and the best appointment time.
-          </p>
+          <h1>Request your quote.</h1>
+          <p>Share your vehicle details and the service you want, and I will follow up as soon as possible.</p>
         </div>
       </section>
 
@@ -981,31 +972,32 @@ export default function App() {
 
       <main>{renderCurrentPage()}</main>
 
-      <section className="info-band">
-        <div className="info-grid">
-          <div className="info-card">
-            <h3>Quality you can see</h3>
-            <p>
-              Every detail is done with care so your vehicle looks cleaner, glossier, and better
-              cared for than a quick drive-through wash can deliver.
-            </p>
+      {currentPage === 'home' ? (
+        <section className="info-band">
+          <div className="info-grid">
+            <div className="info-card">
+              <h3>Quality you can see</h3>
+              <p>
+                Every detail is done with care so your vehicle looks cleaner, glossier, and better
+                cared for than a quick drive-through wash can deliver.
+              </p>
+            </div>
+            <div className="info-card">
+              <h3>Mobile convenience</h3>
+              <p>
+                Book around your day and get the kind of result that still feels premium and worth it.
+              </p>
+            </div>
+            <div className="info-card">
+              <h3>Local service you can trust</h3>
+              <p>
+                Henry Car Detailing serves Jurupa Valley and Riverside with dependable appointment
+                service focused on giving your vehicle the attention it deserves.
+              </p>
+            </div>
           </div>
-          <div className="info-card">
-            <h3>Mobile convenience</h3>
-            <p>
-              The service is built around customers who want strong results without having to carve
-              out extra time for a drop-off process.
-            </p>
-          </div>
-          <div className="info-card">
-            <h3>Local service you can trust</h3>
-            <p>
-              Henry Car Detailing serves Jurupa Valley and Riverside with dependable appointment
-              service focused on giving your vehicle the kind of premium treatment it deserves.
-            </p>
-          </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
 
       <div className="mobile-cta">
         <a href="tel:9513321957" className="mobile-cta-link mobile-cta-call">Call Now</a>
