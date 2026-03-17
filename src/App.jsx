@@ -374,8 +374,8 @@ export default function App() {
             <p className="eyebrow">Contact</p>
             <h2>Request a callback</h2>
             <p>
-              Fill out the form and your request can go straight into your lead sheet so you can
-              call customers back quickly and keep track of new bookings.
+              Fill out the form and I will reach out to you as soon as possible to go over your
+              vehicle, the service you want, and the best time to book.
             </p>
 
             <div className="contact-details">
