@@ -179,18 +179,18 @@ export default function App() {
   const processSteps = [
     {
       step: '01',
-      title: 'Request your quote',
-      text: 'Send your vehicle info and the service you want through the callback form.',
+      title: 'Tell me about your vehicle',
+      text: 'Share your vehicle details and the service you are interested in through the booking form.',
     },
     {
       step: '02',
-      title: 'Confirm the details',
-      text: 'I reach out, confirm pricing, and make sure the service matches your vehicle condition.',
+      title: 'Get your quote confirmed',
+      text: 'You will get a quick response to confirm pricing, service details, and the best booking time.',
     },
     {
       step: '03',
-      title: 'Get the detail done',
-      text: 'Your vehicle gets cleaned with real attention to the finish, not rushed through a basic wash.',
+      title: 'Enjoy the finished result',
+      text: 'Your vehicle gets the kind of careful detailing that leaves it cleaner, fresher, and better presented.',
     },
   ]
 
@@ -408,8 +408,8 @@ export default function App() {
               <h2>Detailing options built for regular upkeep and deeper cleanups</h2>
             </div>
             <p>
-              Pricing is listed as competitive California-style starting rates, with final quotes
-              based on vehicle size, condition, and how deep the cleaning needs to go.
+              Every vehicle is a little different, so pricing starts here and is confirmed based on
+              size, condition, and the level of cleaning you want.
             </p>
           </div>
 
@@ -445,10 +445,10 @@ export default function App() {
 
                     <aside className="service-aside">
                       <p className="service-aside-label">Why customers choose this</p>
-                      <h3>Simple pricing, no guesswork, and a quote that matches your vehicle.</h3>
+                      <h3>Clear pricing, no surprises, and a service built around your vehicle.</h3>
                       <p>
-                        Starting prices keep things straightforward, and the final quote is based on
-                        what your vehicle actually needs, not random upsells.
+                        Starting prices keep things simple, and your final quote is based on the
+                        actual condition of your vehicle and the service you want.
                       </p>
 
                       <ul className="service-aside-list">
@@ -458,8 +458,8 @@ export default function App() {
                       </ul>
 
                       <div className="service-aside-note">
-                        <strong>Quick quote promise:</strong> I will confirm pricing before the job
-                        starts so you know exactly what to expect.
+                        <strong>Before your appointment:</strong> You will know the confirmed price
+                        before the work begins.
                       </div>
                     </aside>
                   </div>
@@ -499,8 +499,8 @@ export default function App() {
               <h2>Easy to book, clear from the start, and built around your vehicle</h2>
             </div>
             <p>
-              Customers are more likely to reach out when the process feels simple. This keeps
-              everything clear from the first message to the finished detail.
+              Booking should feel simple. From your first message to the finished detail, the goal
+              is to keep everything clear, straightforward, and easy.
             </p>
           </div>
 
@@ -583,15 +583,15 @@ export default function App() {
           <div className="info-card">
             <h3>Honest pricing, real value</h3>
             <p>
-              You get hands-on service, attention to the small details, and results that make the
-              price worth it from the moment you see your car finished.
+              You get careful hands-on work, real attention to detail, and results that feel worth
+              it when you see your vehicle finished.
             </p>
           </div>
           <div className="info-card">
             <h3>Local service you can trust</h3>
             <p>
               Henry Car Detailing serves Jurupa Valley and Riverside with dependable appointment
-              service focused on making every customer feel like their car got premium treatment.
+              service focused on giving your vehicle the kind of premium treatment it deserves.
             </p>
           </div>
         </div>
@@ -696,7 +696,7 @@ export default function App() {
               ) : null}
 
               <button className="btn btn-primary form-submit" type="submit" disabled={isSubmitting}>
-                {isSubmitting ? 'Sending...' : 'Send Request'}
+                {isSubmitting ? 'Sending...' : 'Request Your Quote'}
               </button>
             </form>
           </div>
