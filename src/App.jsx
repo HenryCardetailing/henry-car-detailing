@@ -966,7 +966,7 @@ export default function App() {
             ))}
           </nav>
 
-          <a href="tel:9513321957" className="site-call-link">Call 951-332-1957</a>
+          <a href="tel:9513321957" className="site-call-link">Call or Text 951-332-1957</a>
         </div>
       </header>
 
