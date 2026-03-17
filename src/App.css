@@ -275,6 +275,7 @@
 }
 
 .service-card {
+  position: relative;
   background: white;
   border: 1px solid #e5e7eb;
   border-radius: 24px;
@@ -285,6 +286,23 @@
 .service-card-featured {
   background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
   border-color: #bfdbfe;
+}
+
+.service-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #0f172a;
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .services-grid-featured {
@@ -433,6 +451,36 @@
 .results-list {
   display: grid;
   gap: 22px;
+}
+
+.faq {
+  padding-top: 24px;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.faq-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+}
+
+.faq-card h3 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.faq-card p {
+  margin: 0;
+  color: #475569;
+  line-height: 1.65;
 }
 
 .result-card {
@@ -642,12 +690,32 @@
   display: none;
 }
 
+.site-footer {
+  padding: 26px 20px 34px;
+  border-top: 1px solid #e2e8f0;
+  background: #ffffff;
+}
+
+.site-footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: space-between;
+}
+
+.site-footer-inner p {
+  margin: 0;
+  color: #64748b;
+  font-weight: 600;
+}
+
 @media (max-width: 900px) {
   .hero-grid,
   .contact-inner,
   .section-header,
   .services-grid,
   .process-grid,
+  .faq-grid,
   .info-grid,
   .result-card,
   .service-highlight-layout {
@@ -722,5 +790,10 @@
 
   .contact {
     padding-bottom: 130px;
+  }
+
+  .site-footer-inner {
+    flex-direction: column;
+    gap: 10px;
   }
 }

@@ -201,6 +201,24 @@ export default function App() {
     'Serving Jurupa Valley and Riverside',
   ]
 
+  const faqs = [
+    {
+      question: 'Do prices change based on the vehicle?',
+      answer:
+        'Yes. Final pricing depends on the size of the vehicle, its current condition, and how deep the cleaning needs to go.',
+    },
+    {
+      question: 'Do you bring your own detailing supplies?',
+      answer:
+        'Yes. Mobile appointments are set up to keep the process simple, and the service is confirmed with you before the job starts.',
+    },
+    {
+      question: 'How long does a detail usually take?',
+      answer:
+        'Most appointments take anywhere from around 1 hour to 3 hours depending on the service and the condition of the vehicle.',
+    },
+  ]
+
   const transformations = [
     {
       title: 'Rear view transformation',
@@ -428,6 +446,7 @@ export default function App() {
                           key={service.name}
                           className={`service-card${service.featured ? ' service-card-featured' : ''}`}
                         >
+                          {service.featured ? <span className="service-badge">Most Booked</span> : null}
                           <div className="service-top">
                             <h3>{service.name}</h3>
                             <span className="price-pill">{service.price}</span>
@@ -571,6 +590,30 @@ export default function App() {
         </div>
       </section>
 
+      <section className="faq section">
+        <div className="section-inner">
+          <div className="section-header">
+            <div>
+              <p className="eyebrow">FAQ</p>
+              <h2>Answers to a few common questions before you book</h2>
+            </div>
+            <p>
+              A few quick answers can make it easier to decide if the service is the right fit for
+              your vehicle.
+            </p>
+          </div>
+
+          <div className="faq-grid">
+            {faqs.map((item) => (
+              <article key={item.question} className="faq-card">
+                <h3>{item.question}</h3>
+                <p>{item.answer}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="info-band">
         <div className="info-grid">
           <div className="info-card">
@@ -707,6 +750,14 @@ export default function App() {
         <a href="tel:9513321957" className="mobile-cta-link mobile-cta-call">Call Now</a>
         <a href="#contact" className="mobile-cta-link mobile-cta-book">Book Online</a>
       </div>
+
+      <footer className="site-footer">
+        <div className="section-inner site-footer-inner">
+          <p>Henry Car Detailing LLC</p>
+          <p>Jurupa Valley / Riverside</p>
+          <p>951-332-1957</p>
+        </div>
+      </footer>
     </div>
   )
 }
