@@ -87,22 +87,22 @@ function Edit-Image($path, $actions) {
 $base = 'c:\Users\aiden\henry-car-detailing\public'
 
 Edit-Image (Join-Path $base 'Cruze_back_dirty.jpg') @(
-  @{ type = 'plate'; x = 1710; y = 1810; w = 760; h = 240 },
+  @{ type = 'plate'; x = 1710; y = 1925; w = 760; h = 220 },
   @{ type = 'pixelate'; x = 170; y = 965; w = 250; h = 120; scale = 10 }
 )
 
 Edit-Image (Join-Path $base 'Cruze_Back_Clean.jpg') @(
-  @{ type = 'plate'; x = 1170; y = 2055; w = 760; h = 230 },
+  @{ type = 'plate'; x = 1165; y = 2190; w = 780; h = 230 },
   @{ type = 'pixelate'; x = 115; y = 1135; w = 235; h = 125; scale = 12 }
 )
 
 Edit-Image (Join-Path $base 'Cruze_front_dirty.jpg') @(
-  @{ type = 'plate'; x = 1090; y = 2985; w = 880; h = 250 },
+  @{ type = 'plate'; x = 1090; y = 3120; w = 880; h = 230 },
   @{ type = 'pixelate'; x = 1675; y = 675; w = 115; h = 170; scale = 12 }
 )
 
 Edit-Image (Join-Path $base 'Cruze_Front_clean.jpg') @(
-  @{ type = 'plate'; x = 1090; y = 3130; w = 900; h = 250 },
+  @{ type = 'plate'; x = 1090; y = 3280; w = 900; h = 220 },
   @{ type = 'pixelate'; x = 1690; y = 710; w = 110; h = 165; scale = 12 }
 )
 
