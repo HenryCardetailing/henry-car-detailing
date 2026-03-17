@@ -217,12 +217,41 @@
   gap: 20px;
 }
 
+.service-groups {
+  display: grid;
+  gap: 30px;
+}
+
+.service-group {
+  display: grid;
+  gap: 14px;
+}
+
+.service-group-header {
+  display: flex;
+  align-items: center;
+}
+
+.service-group-label {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #0f172a;
+}
+
 .service-card {
   background: white;
   border: 1px solid #e5e7eb;
   border-radius: 24px;
   padding: 24px;
   box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+}
+
+.service-card-featured {
+  background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
+  border-color: #bfdbfe;
 }
 
 .service-top {
@@ -249,6 +278,25 @@
 .service-card p {
   margin-top: 16px;
   color: #475569;
+}
+
+.service-time {
+  margin: 12px 0 0;
+  color: #0f172a;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.service-list {
+  margin: 18px 0 0;
+  padding-left: 18px;
+  color: #475569;
+  display: grid;
+  gap: 8px;
+}
+
+.service-list li::marker {
+  color: #38bdf8;
 }
 
 .results {

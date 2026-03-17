@@ -5,6 +5,7 @@ export default function App() {
   const webhookUrl =
     import.meta.env.VITE_BOOKING_WEBHOOK_URL ||
     'https://script.google.com/macros/s/AKfycbwSepdK63XRnvnqV96S7A7fa_VheKrhbHvZdrMP4X5v5_gxf9mii63tMkFG4OrXxL9tDA/exec'
+
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -17,36 +18,135 @@ export default function App() {
   const [status, setStatus] = useState({ type: '', message: '' })
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const services = [
+  const serviceGroups = [
     {
-      name: 'Basic Exterior Wash',
-      price: '$30–$40',
-      desc: 'Foam cannon wash, hand wash, wheels cleaned, tire shine, microfiber dry.',
+      label: 'Most Popular',
+      items: [
+        {
+          name: 'Complete Full Detail',
+          price: 'Starting at $160',
+          time: 'Approx. 2-3 hours',
+          desc: 'A strong all-around package for customers who want the inside and outside of the vehicle cleaned up in one visit.',
+          includes: [
+            'Complete exterior wash and towel dry',
+            'Wheels and tires deep cleaned',
+            'Tire shine in satin or gloss finish',
+            'Full interior vacuum',
+            'Dash, doors, console, and cup holders cleaned',
+            'Interior and exterior windows cleaned',
+            'Plastic and trim dressed for a factory-finish look',
+          ],
+          featured: true,
+        },
+      ],
     },
     {
-      name: 'Basic Interior Detail',
-      price: '$45–$65',
-      desc: 'Vacuum carpets and seats, wipe plastics, and clean interior glass.',
+      label: 'Exterior Services',
+      items: [
+        {
+          name: 'Exterior Detail',
+          price: 'Starting at $55',
+          time: 'Approx. 1-1.5 hours',
+          desc: 'Built for regular upkeep when the outside needs a proper hand wash and a cleaner finished look.',
+          includes: [
+            'Exterior detailing clean',
+            'Wheels and tires cleaned',
+            'Tire shine',
+            'Exterior windows cleaned',
+            'Microfiber towel dry',
+          ],
+        },
+        {
+          name: 'Deep Exterior Detail',
+          price: 'Starting at $95',
+          time: 'Approx. 1.5-2 hours',
+          desc: 'For dirtier vehicles that need more time spent on buildup, trim, and a stronger finished presentation.',
+          includes: [
+            'Everything in exterior detail',
+            'Deeper bug and grime removal',
+            'Door jamb wipe down',
+            'Trim refresh',
+            'Finishing gloss treatment',
+          ],
+        },
+      ],
     },
     {
-      name: 'Deep Interior Cleaning',
-      price: '$100–$130',
-      desc: 'Vacuum plus shampoo extraction of carpets and seats, plastics cleaned, and door panels cleaned.',
+      label: 'Interior Services',
+      items: [
+        {
+          name: 'Interior Detail',
+          price: 'Starting at $75',
+          time: 'Approx. 1-1.5 hours',
+          desc: 'A maintenance-level interior cleanup for vehicles that need vacuuming, wipe down work, and a fresher cabin.',
+          includes: [
+            'Full vacuum for seats, carpets, and mats',
+            'Dash, doors, console, and cup holders cleaned',
+            'Interior windows cleaned',
+            'Light plastic dressing with a non-greasy finish',
+          ],
+        },
+        {
+          name: 'Deep Interior Cleaning',
+          price: 'Starting at $130',
+          time: 'Approx. 2-3 hours',
+          desc: 'Best for stains, spills, pets, kids, and interiors that need more than a basic reset.',
+          includes: [
+            'Everything in interior detail',
+            'Carpet and seat shampoo extraction',
+            'Stain treatment and agitation',
+            'Deeper cleaning on high-touch surfaces',
+          ],
+        },
+      ],
     },
     {
-      name: 'Headlight Restoration',
-      price: '$50–$60',
-      desc: 'Remove oxidation and restore headlight clarity.',
-    },
-    {
-      name: 'Premium Detail',
-      price: '$220–$260',
-      desc: 'Wash, clay treatment, paint enhancement polish, interior deep cleaning, and wax protection.',
-    },
-    {
-      name: 'Pet Hair Add-On',
-      price: '$25–$45',
-      desc: 'Extra charge based on severity of pet hair and extra time required.',
+      label: 'Add-Ons',
+      items: [
+        {
+          name: 'Headlight Restoration',
+          price: '$50-$70',
+          time: 'Approx. 30-45 min',
+          desc: 'Helps remove oxidation and cloudiness so headlights look clearer and nighttime visibility improves.',
+          includes: [
+            'Restoration process to improve clarity',
+            'Oxidation and haze removal',
+            'Protective finish applied',
+          ],
+        },
+        {
+          name: 'Carpet and Seat Deep Clean',
+          price: '$35-$50',
+          time: 'Add-on time varies',
+          desc: 'Ideal for pets, kids, muddy shoes, or spills that need stronger stain-focused cleaning.',
+          includes: [
+            'Stain treatment and agitation',
+            'Targeted extraction work',
+            'Works well with interior packages',
+          ],
+        },
+        {
+          name: 'Tire and Trim Enhancement',
+          price: '$15-$25',
+          time: 'Approx. 15-20 min',
+          desc: 'Adds a darker, cleaner finish to tires and trim without leaving an overly greasy look.',
+          includes: [
+            'Deep black tire finish',
+            'Restored exterior trim appearance',
+            'Factory-finish look',
+          ],
+        },
+        {
+          name: 'Pet Hair Removal',
+          price: '$25-$45',
+          time: 'Based on severity',
+          desc: 'Extra labor for stubborn pet hair that needs more time and more detailed removal work.',
+          includes: [
+            'Focused pet hair removal',
+            'Quoted by severity',
+          ],
+        },
+      ],
     },
   ]
 
@@ -190,7 +290,7 @@ export default function App() {
 
       setStatus({
         type: 'success',
-        message: 'Thanks. Your request was sent and you can follow up from your Google Sheet.',
+        message: 'Thanks. Your request was sent successfully, and I will reach out to you as soon as possible.',
       })
       setFormData({
         name: '',
@@ -248,12 +348,12 @@ export default function App() {
               </div>
 
               <div className="highlight-grid">
-              {highlights.map((item) => (
-                <div key={item.title} className="highlight-card">
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                </div>
-              ))}
+                {highlights.map((item) => (
+                  <div key={item.title} className="highlight-card">
+                    <h3>{item.title}</h3>
+                    <p>{item.text}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -265,23 +365,42 @@ export default function App() {
           <div className="section-header">
             <div>
               <p className="eyebrow">Services</p>
-              <h2>Popular detailing options</h2>
+              <h2>Detailing options built for regular upkeep and deeper cleanups</h2>
             </div>
             <p>
-              Straightforward pricing and services designed for everyday drivers who want their
-              vehicle cleaner, shinier, and better protected.
+              Pricing is listed as competitive California-style starting rates, with final quotes
+              based on vehicle size, condition, and how deep the cleaning needs to go.
             </p>
           </div>
 
-          <div className="services-grid">
-            {services.map((service) => (
-              <div key={service.name} className="service-card">
-                <div className="service-top">
-                  <h3>{service.name}</h3>
-                  <span className="price-pill">{service.price}</span>
+          <div className="service-groups">
+            {serviceGroups.map((group) => (
+              <section key={group.label} className="service-group">
+                <div className="service-group-header">
+                  <p className="service-group-label">{group.label}</p>
                 </div>
-                <p>{service.desc}</p>
-              </div>
+
+                <div className="services-grid">
+                  {group.items.map((service) => (
+                    <div
+                      key={service.name}
+                      className={`service-card${service.featured ? ' service-card-featured' : ''}`}
+                    >
+                      <div className="service-top">
+                        <h3>{service.name}</h3>
+                        <span className="price-pill">{service.price}</span>
+                      </div>
+                      <p className="service-time">{service.time}</p>
+                      <p>{service.desc}</p>
+                      <ul className="service-list">
+                        {service.includes.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </section>
             ))}
           </div>
         </div>
@@ -419,11 +538,13 @@ export default function App() {
                   <span>Service wanted</span>
                   <select name="service" value={formData.service} onChange={handleChange} required>
                     <option value="">Choose a service</option>
-                    {services.map((service) => (
-                      <option key={service.name} value={service.name}>
-                        {service.name}
-                      </option>
-                    ))}
+                    {serviceGroups.flatMap((group) =>
+                      group.items.map((service) => (
+                        <option key={service.name} value={service.name}>
+                          {service.name}
+                        </option>
+                      ))
+                    )}
                   </select>
                 </label>
               </div>
