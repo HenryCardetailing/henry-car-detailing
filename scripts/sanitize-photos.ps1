@@ -92,7 +92,7 @@ Edit-Image (Join-Path $base 'Cruze_back_dirty.jpg') @(
 )
 
 Edit-Image (Join-Path $base 'Cruze_Back_Clean.jpg') @(
-  @{ type = 'plate'; x = 1160; y = 2340; w = 790; h = 220 },
+  @{ type = 'plate'; x = 1160; y = 2415; w = 790; h = 215 },
   @{ type = 'pixelate'; x = 115; y = 1135; w = 235; h = 125; scale = 12 }
 )
 
@@ -102,7 +102,7 @@ Edit-Image (Join-Path $base 'Cruze_front_dirty.jpg') @(
 )
 
 Edit-Image (Join-Path $base 'Cruze_Front_clean.jpg') @(
-  @{ type = 'plate'; x = 1090; y = 3440; w = 900; h = 210 },
+  @{ type = 'plate'; x = 1090; y = 3515; w = 900; h = 205 },
   @{ type = 'pixelate'; x = 1690; y = 710; w = 110; h = 165; scale = 12 }
 )
 
