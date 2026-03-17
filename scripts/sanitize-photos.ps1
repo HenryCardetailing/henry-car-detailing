@@ -88,7 +88,8 @@ $base = 'c:\Users\aiden\henry-car-detailing\public'
 
 Edit-Image (Join-Path $base 'Cruze_back_dirty.jpg') @(
   @{ type = 'plate'; x = 1705; y = 2025; w = 770; h = 210 },
-  @{ type = 'pixelate'; x = 170; y = 965; w = 250; h = 120; scale = 10 }
+  @{ type = 'pixelate'; x = 170; y = 965; w = 250; h = 120; scale = 10 },
+  @{ type = 'pixelate'; x = 1010; y = 1085; w = 440; h = 180; scale = 18 }
 )
 
 Edit-Image (Join-Path $base 'Cruze_Back_Clean.jpg') @(
