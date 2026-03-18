@@ -17,7 +17,7 @@ const serviceGroups = [
     items: [
       {
         name: 'Complete Full Detail',
-        price: 'Starting at $160',
+        price: 'Starting at $150',
         time: 'Approx. 2-3 hours',
         desc: 'A strong all-around package for customers who want the inside and outside of the vehicle cleaned up in one visit.',
         includes: [
