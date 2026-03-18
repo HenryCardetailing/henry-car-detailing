@@ -17,7 +17,7 @@ const serviceGroups = [
     items: [
       {
         name: 'Complete Full Detail',
-        price: 'Starting at $160',
+        price: 'Starting at $150',
         time: 'Approx. 2-3 hours',
         desc: 'A strong all-around package for customers who want the inside and outside of the vehicle cleaned up in one visit.',
         includes: [
@@ -38,7 +38,7 @@ const serviceGroups = [
     items: [
       {
         name: 'Exterior Detail',
-        price: 'Starting at $55',
+        price: 'Starting at $45',
         time: 'Approx. 1-1.5 hours',
         desc: 'Built for regular upkeep when the outside needs a proper hand wash and a cleaner finished look.',
         includes: [
@@ -51,7 +51,7 @@ const serviceGroups = [
       },
       {
         name: 'Deep Exterior Detail',
-        price: 'Starting at $95',
+        price: 'Starting at $85',
         time: 'Approx. 1.5-2 hours',
         desc: 'For dirtier vehicles that need more time spent on buildup, trim, and a stronger finished presentation.',
         includes: [
@@ -69,7 +69,7 @@ const serviceGroups = [
     items: [
       {
         name: 'Interior Detail',
-        price: 'Starting at $75',
+        price: 'Starting at $65',
         time: 'Approx. 1-1.5 hours',
         desc: 'A maintenance-level interior cleanup for vehicles that need vacuuming, wipe down work, and a fresher cabin.',
         includes: [
@@ -81,7 +81,7 @@ const serviceGroups = [
       },
       {
         name: 'Deep Interior Cleaning',
-        price: 'Starting at $130',
+        price: 'Starting at $120',
         time: 'Approx. 2-3 hours',
         desc: 'Best for stains, spills, pets, kids, and interiors that need more than a basic reset.',
         includes: [
