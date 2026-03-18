@@ -612,7 +612,10 @@ export default function App() {
         <div className="hero-inner">
           <div className="hero-grid">
             <div className="hero-copy">
-              <div className="brand-badge">Henry Car Detailing</div>
+              <div className="brand-badge">
+                <span className="brand-badge-top">Henry</span>
+                <span className="brand-badge-bottom">Car Detailing</span>
+              </div>
               <p className="hero-kicker">Mobile detailing for drivers who want their car to actually look cared for.</p>
               <h1>
                 Premium detailing that makes
@@ -952,7 +955,10 @@ export default function App() {
     <div className="site">
       <header className="site-header">
         <div className="section-inner site-header-inner">
-          <a href="#/home" className="site-logo">Henry Car Detailing</a>
+          <a href="#/home" className="site-logo" aria-label="Henry Car Detailing home">
+            <span className="site-logo-top">Henry</span>
+            <span className="site-logo-bottom">Car Detailing</span>
+          </a>
 
           <nav className="site-nav" aria-label="Primary">
             {pages.map((page) => (
