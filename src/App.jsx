@@ -530,12 +530,12 @@ function ResultsSection({ preview = false }) {
           {shownTransformations.map((item) => (
             <article key={item.title} className="result-card">
               <CompareSlider
-                beforeImage={item.beforeImage}
-                afterImage={item.afterImage}
-                altBefore={item.altBefore}
-                altAfter={item.altAfter}
-                beforeLabel={item.before}
-                afterLabel={item.after}
+                beforeImage={item.afterImage}
+                afterImage={item.beforeImage}
+                altBefore={item.altAfter}
+                altAfter={item.altBefore}
+                beforeLabel={item.after}
+                afterLabel={item.before}
               />
 
               <div className="result-copy">
