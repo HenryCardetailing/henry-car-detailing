@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 
 const logoSrc = '/ChatGPT Image Mar 18, 2026, 12_13_06 PM.png'
@@ -476,74 +476,34 @@ function ServicesSection({ preview = false }) {
 }
 
 function CompareSlider({ beforeImage, afterImage, altBefore, altAfter, beforeLabel, afterLabel }) {
-  const [showAfter, setShowAfter] = useState(false)
-  const touchStartX = useRef(null)
-
-  const activeImage = showAfter
-    ? { src: afterImage, alt: altAfter, label: afterLabel }
-    : { src: beforeImage, alt: altBefore, label: beforeLabel }
-
-  const handlePointerDown = (event) => {
-    touchStartX.current = event.clientX
-  }
-
-  const handlePointerUp = (event) => {
-    if (touchStartX.current === null) return
-
-    const delta = event.clientX - touchStartX.current
-
-    if (Math.abs(delta) > 35) {
-      setShowAfter(delta < 0)
-    }
-
-    touchStartX.current = null
-  }
+  const [position, setPosition] = useState(50)
 
   return (
     <div className="compare-slider">
-      <div
-        className="compare-stage compare-stage-swap"
-        onPointerDown={handlePointerDown}
-        onPointerUp={handlePointerUp}
-      >
-        <img className="compare-image compare-image-single" src={activeImage.src} alt={activeImage.alt} />
+      <div className="compare-stage">
+        <img className="compare-image compare-image-base" src={beforeImage} alt={altBefore} />
 
-        <button
-          className="compare-nav compare-nav-left"
-          type="button"
-          aria-label={`Show ${beforeLabel.toLowerCase()} photo`}
-          onClick={() => setShowAfter(false)}
-        >
-          ‹
-        </button>
-
-        <button
-          className="compare-nav compare-nav-right"
-          type="button"
-          aria-label={`Show ${afterLabel.toLowerCase()} photo`}
-          onClick={() => setShowAfter(true)}
-        >
-          ›
-        </button>
-
-        <span className="photo-tag photo-tag-left">{activeImage.label}</span>
-        <div className="compare-status">
-          <button
-            type="button"
-            className={`compare-chip${!showAfter ? ' compare-chip-active' : ''}`}
-            onClick={() => setShowAfter(false)}
-          >
-            {beforeLabel}
-          </button>
-          <button
-            type="button"
-            className={`compare-chip${showAfter ? ' compare-chip-active' : ''}`}
-            onClick={() => setShowAfter(true)}
-          >
-            {afterLabel}
-          </button>
+        <div className="compare-overlay" style={{ width: `${position}%` }}>
+          <img className="compare-image" src={afterImage} alt={altAfter} />
         </div>
+
+        <div className="compare-divider" style={{ left: `${position}%` }}>
+          <span className="compare-handle" aria-hidden="true" />
+        </div>
+
+        <span className="photo-tag photo-tag-left">{beforeLabel}</span>
+        <span className="photo-tag photo-tag-right">{afterLabel}</span>
       </div>
+
+      <input
+        className="compare-range"
+        type="range"
+        min="0"
+        max="100"
+        value={position}
+        aria-label="Slide to compare before and after result"
+        onChange={(event) => setPosition(Number(event.target.value))}
+      />
     </div>
   )
 }
