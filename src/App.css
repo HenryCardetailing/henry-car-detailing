@@ -473,12 +473,13 @@
 .service-card-featured {
   background: linear-gradient(135deg, #ffffff 0%, #eff4fb 54%, #edf7ff 100%);
   border-color: rgba(25, 168, 255, 0.18);
+  padding-top: 72px;
 }
 
 .service-badge {
   position: absolute;
   top: 18px;
-  right: 18px;
+  left: 24px;
   display: inline-flex;
   align-items: center;
   padding: 6px 12px;
