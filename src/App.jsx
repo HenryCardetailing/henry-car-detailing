@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 
+const logoSrc = '/Sleek logo for Henry Car Detailing.png'
+
 const pages = [
   { id: 'home', label: 'Home' },
   { id: 'mobile', label: 'Mobile Service' },
@@ -613,8 +615,7 @@ export default function App() {
           <div className="hero-grid">
             <div className="hero-copy">
               <div className="brand-badge">
-                <span className="brand-badge-top">Henry</span>
-                <span className="brand-badge-bottom">Car Detailing</span>
+                <img className="brand-badge-image" src={logoSrc} alt="Henry Car Detailing logo" />
               </div>
               <p className="hero-kicker">Mobile detailing for drivers who want their car to actually look cared for.</p>
               <h1>
@@ -956,8 +957,7 @@ export default function App() {
       <header className="site-header">
         <div className="section-inner site-header-inner">
           <a href="#/home" className="site-logo" aria-label="Henry Car Detailing home">
-            <span className="site-logo-top">Henry</span>
-            <span className="site-logo-bottom">Car Detailing</span>
+            <img className="site-logo-image" src={logoSrc} alt="Henry Car Detailing" />
           </a>
 
           <nav className="site-nav" aria-label="Primary">
@@ -1012,7 +1012,10 @@ export default function App() {
 
       <footer className="site-footer">
         <div className="section-inner site-footer-inner">
-          <p>Henry Car Detailing LLC</p>
+          <div className="site-footer-brand">
+            <img className="site-footer-logo" src={logoSrc} alt="Henry Car Detailing logo" />
+            <p>Henry Car Detailing LLC</p>
+          </div>
           <p>Jurupa Valley / Riverside</p>
           <p>951-332-1957</p>
         </div>

@@ -52,29 +52,14 @@
 }
 
 .site-logo {
-  display: inline-grid;
-  gap: 1px;
-  line-height: 1;
+  display: inline-flex;
+  align-items: center;
 }
 
-.site-logo-top {
-  font-size: 28px;
-  font-weight: 900;
-  letter-spacing: -0.06em;
-  text-transform: uppercase;
-  background: linear-gradient(180deg, #ffffff 0%, #dbe1e9 45%, #6b7b90 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(12, 17, 23, 0.55);
-}
-
-.site-logo-bottom {
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.34em;
-  text-transform: uppercase;
-  color: var(--accent-strong);
+.site-logo-image {
+  display: block;
+  width: auto;
+  height: 58px;
 }
 
 .site-nav {
@@ -132,35 +117,24 @@
 }
 
 .brand-badge {
-  display: inline-grid;
+  display: inline-flex;
   width: fit-content;
-  gap: 2px;
-  padding: 14px 18px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 14px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 22px;
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
     rgba(255, 255, 255, 0.03);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  overflow: hidden;
 }
 
-.brand-badge-top {
-  font-size: 30px;
-  font-weight: 900;
-  letter-spacing: -0.08em;
-  text-transform: uppercase;
-  background: linear-gradient(180deg, #ffffff 0%, #dce2eb 45%, #6d7d94 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.brand-badge-bottom {
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.34em;
-  text-transform: uppercase;
-  color: var(--accent);
+.brand-badge-image {
+  display: block;
+  width: min(100%, 340px);
+  height: auto;
 }
 
 .hero-kicker,
@@ -853,6 +827,18 @@
   gap: 16px;
 }
 
+.site-footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.site-footer-logo {
+  display: block;
+  width: auto;
+  height: 52px;
+}
+
 .site-footer-inner p {
   margin: 0;
   color: #64748b;
@@ -886,6 +872,10 @@
     justify-items: start;
   }
 
+  .site-logo-image {
+    height: 52px;
+  }
+
   .site-nav {
     justify-content: start;
   }
@@ -900,6 +890,10 @@
   .page-hero h1 {
     font-size: 42px;
     line-height: 1.02;
+  }
+
+  .brand-badge-image {
+    width: min(100%, 280px);
   }
 
   .hero-panel,
@@ -954,5 +948,11 @@
 
   .site-footer-inner {
     flex-direction: column;
+  }
+
+  .site-footer-brand {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
   }
 }
