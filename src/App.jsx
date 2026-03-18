@@ -534,8 +534,8 @@ function ResultsSection({ preview = false }) {
                 afterImage={item.beforeImage}
                 altBefore={item.altAfter}
                 altAfter={item.altBefore}
-                beforeLabel={item.after}
-                afterLabel={item.before}
+                beforeLabel={item.before}
+                afterLabel={item.after}
               />
 
               <div className="result-copy">
