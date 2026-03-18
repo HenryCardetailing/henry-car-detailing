@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 
-const logoSrc = '/Sleek logo for Henry Car Detailing.png'
+const logoSrc = '/ChatGPT Image Mar 18, 2026, 12_13_06 PM.png'
 
 const pages = [
   { id: 'home', label: 'Home' },
