@@ -917,17 +917,40 @@
   }
 
   .site-header-inner {
-    padding: 14px 20px;
+    padding: 12px 18px 10px;
     grid-template-columns: 1fr;
     justify-items: start;
+    gap: 12px;
+    min-height: auto;
   }
 
   .site-logo-image {
-    height: 58px;
+    height: 50px;
   }
 
   .site-nav {
     justify-content: start;
+    gap: 6px;
+    overflow-x: auto;
+    width: 100%;
+    padding-bottom: 2px;
+    flex-wrap: nowrap;
+  }
+
+  .site-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .site-nav-link {
+    flex: 0 0 auto;
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+
+  .site-call-link {
+    min-height: 42px;
+    padding: 0 14px;
+    font-size: 13px;
   }
 
   .highlight-grid,
@@ -936,24 +959,125 @@
     grid-template-columns: 1fr;
   }
 
+  .hero {
+    padding: 48px 18px 42px;
+  }
+
   .hero h1,
   .page-hero h1 {
-    font-size: 42px;
-    line-height: 1.02;
+    font-size: 34px;
+    line-height: 1.04;
+    letter-spacing: -0.04em;
+  }
+
+  .hero p,
+  .page-hero p {
+    font-size: 16px;
+    line-height: 1.6;
   }
 
   .brand-badge-image {
-    width: min(100%, 320px);
+    width: min(100%, 260px);
+  }
+
+  .hero-kicker,
+  .hero-panel-label,
+  .eyebrow,
+  .service-group-label,
+  .service-aside-label,
+  .process-step {
+    font-size: 11px;
+    letter-spacing: 0.16em;
   }
 
   .hero-panel,
   .service-aside,
   .mobile-aside {
-    padding: 22px;
+    padding: 20px;
+    border-radius: 24px;
+  }
+
+  .hero-panel h2,
+  .service-aside h3,
+  .mobile-aside h3,
+  .result-copy h3,
+  .estimate-copy h2,
+  .section-header h2,
+  .contact-copy h2 {
+    font-size: 28px;
+    line-height: 1.12;
+  }
+
+  .section,
+  .contact,
+  .info-band {
+    padding: 44px 18px;
+  }
+
+  .section-header {
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+
+  .feature-card,
+  .process-card,
+  .faq-card,
+  .service-card,
+  .contact-card,
+  .result-card,
+  .estimate-card {
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .service-card-featured {
+    padding-top: 68px;
+  }
+
+  .service-badge {
+    left: 20px;
+  }
+
+  .service-card h3,
+  .process-card h3,
+  .faq-card h3,
+  .feature-card h3 {
+    font-size: 20px;
+  }
+
+  .price-pill {
+    font-size: 13px;
+    padding: 7px 10px;
+  }
+
+  .service-list,
+  .service-aside-list,
+  .estimate-list {
+    gap: 9px;
   }
 
   .result-photo-frame {
-    min-height: 240px;
+    min-height: 220px;
+    border-radius: 20px;
+  }
+
+  .photo-tag {
+    top: 12px;
+    left: 12px;
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  .contact-details {
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    padding: 13px 14px;
+    border-radius: 14px;
   }
 
   .mobile-cta {
