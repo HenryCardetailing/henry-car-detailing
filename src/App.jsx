@@ -163,6 +163,7 @@ const quoteReasons = [
   'Vehicle size and overall condition',
   'Pet hair, stains, or heavy buildup',
   'How deep the interior or exterior needs to be cleaned',
+  'Extra time needed for vehicles in rougher or dirtier condition',
   'Any add-ons like headlights, trim, or extraction',
 ]
 
@@ -200,7 +201,7 @@ const faqs = [
   {
     question: 'Do prices change based on the vehicle?',
     answer:
-      'Yes. Final pricing depends on the size of the vehicle, its current condition, and how deep the cleaning needs to go.',
+      'Yes. Final pricing depends on the size of the vehicle, its current condition, and how deep the cleaning needs to go. Vehicles that are especially dirty, neglected, or in rougher shape may cost more than the starting rate.',
   },
   {
     question: 'How long does a detail usually take?',
@@ -227,7 +228,7 @@ const mobileBenefits = [
 const mobileExpectations = [
   'Appointments are confirmed before arrival',
   'Service area currently focuses on Jurupa Valley and Riverside',
-  'Pricing is based on your vehicle and the work requested',
+  'Pricing is based on your vehicle, its condition, and the work requested',
   'The goal is professional results without making you leave your day behind',
 ]
 
@@ -322,6 +323,7 @@ const featuredServices = [
 const estimateHighlights = [
   'Free quotes and estimates',
   'Willing to check out the vehicle in person when needed',
+  'Vehicles in rougher or dirtier condition may need a higher final quote',
   'Final pricing confirmed before any work starts',
 ]
 
@@ -348,7 +350,8 @@ function ServicesSection({ preview = false }) {
           </div>
           <p>
             Every vehicle is a little different, so pricing starts here and is confirmed based on
-            size, condition, and the level of cleaning you want.
+            size, condition, and the level of cleaning you want. Dirtier or rougher-condition
+            vehicles may cost more than the starting price.
           </p>
         </div>
 
@@ -388,7 +391,7 @@ function ServicesSection({ preview = false }) {
                     <h3>Clear pricing, no surprises, and service built around your vehicle.</h3>
                     <p>
                       Starting prices keep things simple, and your final quote is based on the
-                      actual condition of your vehicle and the service you want.
+                      actual condition of your vehicle, how dirty it is, and the service you want.
                     </p>
 
                     <ul className="service-aside-list">
@@ -399,7 +402,8 @@ function ServicesSection({ preview = false }) {
 
                     <div className="service-aside-note">
                       <strong>Before your appointment:</strong> You will know the confirmed price
-                      before the work begins.
+                      before the work begins, especially if the vehicle needs extra work because of
+                      heavier dirt, buildup, stains, or overall condition.
                     </div>
                   </aside>
                 </div>
@@ -708,7 +712,9 @@ export default function App() {
             <h2>Free estimates available, and I am willing to come check out the vehicle when needed.</h2>
             <p>
               If you are not sure which service fits best, or your vehicle needs a closer look
-              before pricing is confirmed, you can still reach out for a free quote first.
+              before pricing is confirmed, you can still reach out for a free quote first. If the
+              vehicle is especially dirty or in rough condition, the estimate helps set the right
+              expectations before the appointment.
             </p>
           </div>
 
@@ -832,7 +838,11 @@ export default function App() {
         <div className="section-inner page-hero-inner">
           <p className="eyebrow">Contact</p>
           <h1>Request your quote.</h1>
-          <p>Share your vehicle details and the service you want, and I will follow up as soon as possible.</p>
+          <p>
+            Share your vehicle details and the service you want, and I will follow up as soon as
+            possible. If the vehicle is in rougher shape or needs heavier cleanup, that will be
+            reflected in the final quote.
+          </p>
         </div>
       </section>
 
