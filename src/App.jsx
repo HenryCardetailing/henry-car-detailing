@@ -213,11 +213,11 @@ const faqs = [
 const mobileBenefits = [
   {
     title: 'You stay on schedule',
-    text: 'Appointments are designed to meet you where your vehicle already is, so booking feels easier and less disruptive.',
+    text: 'Your appointment can be arranged around where your vehicle already is, so getting it detailed feels easier and less disruptive.',
   },
   {
     title: 'Home or work appointments',
-    text: 'Whether the vehicle is at home, parked at work, or set for another approved location, the goal is convenience without sacrificing quality.',
+    text: 'Whether your vehicle is at home, parked at work, or at another approved location, you can book a detail without giving up the quality you want.',
   },
   {
     title: 'Clear communication before arrival',
@@ -229,7 +229,7 @@ const mobileExpectations = [
   'Appointments are confirmed before arrival',
   'Service area currently focuses on Jurupa Valley and Riverside',
   'Pricing is based on your vehicle, its condition, and the work requested',
-  'The goal is professional results without making you leave your day behind',
+  'You can get professional results without having to build your whole day around a drop-off',
 ]
 
 const transformations = [
@@ -455,8 +455,8 @@ function ResultsSection({ preview = false }) {
             <h2>Before and after work customers can actually see</h2>
           </div>
           <p>
-            A strong detail should be visible at a glance. This section is built to showcase the
-            kind of transformation that helps customers trust the quality before they even call.
+            A strong detail should be visible at a glance. These before-and-after examples help you
+            see the kind of transformation you can expect before you book.
           </p>
         </div>
 
@@ -633,9 +633,8 @@ export default function App() {
                 <span className="hero-title-accent">daily drivers look worth showing off.</span>
               </h1>
               <p>
-                Henry Car Detailing is built for customers who want strong results, cleaner
-                interiors, sharper exteriors, and a booking process that feels simple from the
-                first message.
+                If you want strong results, cleaner interiors, sharper exteriors, and a booking
+                process that feels simple from the first message, this service is built for you.
               </p>
 
               <div className="hero-buttons">
@@ -685,8 +684,8 @@ export default function App() {
               <h2>A cleaner site flow, and a detailing service that comes to you</h2>
             </div>
             <p>
-              If you want the convenience of mobile service without losing the premium feel, the
-              mobile detailing page breaks down exactly how appointments work.
+              If you want the convenience of mobile service without giving up a premium result, you
+              can head to the mobile detailing page to see exactly how appointments work.
             </p>
           </div>
 
@@ -713,8 +712,8 @@ export default function App() {
             <p>
               If you are not sure which service fits best, or your vehicle needs a closer look
               before pricing is confirmed, you can still reach out for a free quote first. If the
-              vehicle is especially dirty or in rough condition, the estimate helps set the right
-              expectations before the appointment.
+              vehicle is especially dirty or in rough condition, you can get a clearer estimate
+              before the appointment.
             </p>
           </div>
 
@@ -756,8 +755,8 @@ export default function App() {
                 <h2>Convenience that still feels premium</h2>
               </div>
               <p>
-                Mobile service should feel easy, organized, and professional. The work is still
-                careful, the quote is still clear, and the appointment is built around your vehicle.
+                Mobile service should feel easy, organized, and professional, so you can book with
+                confidence and know what to expect before the appointment starts.
               </p>
             </div>
 
@@ -798,8 +797,8 @@ export default function App() {
               <h2>Simple from first contact to finished detail</h2>
             </div>
             <p>
-              This keeps the process easy for customers who want a cleaner car without guessing how
-              the appointment works.
+              If you want a cleaner vehicle without guessing how the appointment works, this gives
+              you a quick step-by-step idea of what happens next.
             </p>
           </div>
 
@@ -852,8 +851,8 @@ export default function App() {
             <p className="eyebrow">Book Your Appointment</p>
             <h2>Request a callback</h2>
             <p>
-              This form is the fastest way to send over your vehicle details and the type of work
-              you want done.
+              If you want a quote, this is the fastest way to send over your vehicle details and
+              the type of work you want done.
             </p>
 
             <div className="contact-details">
@@ -962,7 +961,7 @@ export default function App() {
               <h2>Quick answers before you reach out</h2>
             </div>
             <p>
-              A few common questions answered clearly so booking feels easier and more straightforward.
+              A few common questions answered clearly so you can book with more confidence.
             </p>
           </div>
 
