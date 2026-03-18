@@ -373,6 +373,10 @@
   padding: 64px 20px;
 }
 
+.section-emphasis {
+  padding-top: 16px;
+}
+
 .section-tight-top {
   padding-top: 10px;
 }
@@ -410,6 +414,51 @@
 
 .feature-grid {
   grid-template-columns: repeat(3, 1fr);
+}
+
+.estimate-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.estimate-copy h2 {
+  margin: 8px 0 14px;
+  font-size: 38px;
+  line-height: 1.12;
+}
+
+.estimate-copy p:last-child {
+  max-width: 640px;
+  color: var(--ink-soft);
+}
+
+.estimate-card {
+  padding: 28px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top left, rgba(25, 168, 255, 0.18), transparent 34%),
+    linear-gradient(160deg, var(--panel-dark) 0%, var(--panel-dark-2) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.18);
+  color: white;
+}
+
+.estimate-list {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 12px;
+  color: #e2e8f0;
+}
+
+.estimate-list li::marker {
+  color: #53cbff;
+}
+
+.estimate-card .section-cta-row {
+  margin-top: 22px;
 }
 
 .feature-card,
@@ -854,6 +903,7 @@
   .site-header-inner,
   .hero-grid,
   .section-header,
+  .estimate-section,
   .service-highlight-layout,
   .services-grid,
   .mobile-layout,

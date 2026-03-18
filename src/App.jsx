@@ -319,6 +319,12 @@ const featuredServices = [
   },
 ]
 
+const estimateHighlights = [
+  'Free quotes and estimates',
+  'Willing to check out the vehicle in person when needed',
+  'Final pricing confirmed before any work starts',
+]
+
 function getPageFromHash() {
   const rawHash = window.location.hash.replace(/^#\/?/, '')
 
@@ -695,6 +701,31 @@ export default function App() {
         </div>
       </section>
 
+      <section className="section section-emphasis">
+        <div className="section-inner estimate-section">
+          <div className="estimate-copy">
+            <p className="eyebrow">Free Quotes</p>
+            <h2>Free estimates available, and I am willing to come check out the vehicle when needed.</h2>
+            <p>
+              If you are not sure which service fits best, or your vehicle needs a closer look
+              before pricing is confirmed, you can still reach out for a free quote first.
+            </p>
+          </div>
+
+          <div className="estimate-card">
+            <ul className="estimate-list">
+              {estimateHighlights.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+
+            <div className="section-cta-row">
+              <a href="#/contact" className="btn btn-primary">Request a Free Estimate</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <ServicesSection preview />
       <ResultsSection preview />
     </>
@@ -820,6 +851,7 @@ export default function App() {
               <p><strong>Service Area:</strong> Jurupa Valley / Riverside</p>
               <p><strong>Availability:</strong> By appointment</p>
               <p><strong>Business:</strong> Henry Car Detailing LLC</p>
+              <p><strong>Quotes:</strong> Free estimates available</p>
             </div>
           </div>
 
