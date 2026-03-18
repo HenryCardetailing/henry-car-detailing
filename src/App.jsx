@@ -475,6 +475,39 @@ function ServicesSection({ preview = false }) {
   )
 }
 
+function CompareSlider({ beforeImage, afterImage, altBefore, altAfter, beforeLabel, afterLabel }) {
+  const [position, setPosition] = useState(50)
+
+  return (
+    <div className="compare-slider">
+      <div className="compare-stage">
+        <img className="compare-image compare-image-base" src={beforeImage} alt={altBefore} />
+
+        <div className="compare-overlay" style={{ width: `${position}%` }}>
+          <img className="compare-image" src={afterImage} alt={altAfter} />
+        </div>
+
+        <div className="compare-divider" style={{ left: `${position}%` }}>
+          <span className="compare-handle" aria-hidden="true" />
+        </div>
+
+        <span className="photo-tag photo-tag-left">{beforeLabel}</span>
+        <span className="photo-tag photo-tag-right">{afterLabel}</span>
+      </div>
+
+      <input
+        className="compare-range"
+        type="range"
+        min="0"
+        max="100"
+        value={position}
+        aria-label="Slide to compare before and after result"
+        onChange={(event) => setPosition(Number(event.target.value))}
+      />
+    </div>
+  )
+}
+
 function ResultsSection({ preview = false }) {
   const shownTransformations = preview ? transformations.slice(0, 2) : transformations
   const shownSpotlights = preview ? spotlightShots.slice(0, 1) : spotlightShots
@@ -496,16 +529,14 @@ function ResultsSection({ preview = false }) {
         <div className="results-list">
           {shownTransformations.map((item) => (
             <article key={item.title} className="result-card">
-              <div className="result-photos">
-                <div className="result-photo-frame">
-                  <img className="result-photo-image" src={item.beforeImage} alt={item.altBefore} />
-                  <span className="photo-tag">{item.before}</span>
-                </div>
-                <div className="result-photo-frame">
-                  <img className="result-photo-image" src={item.afterImage} alt={item.altAfter} />
-                  <span className="photo-tag">{item.after}</span>
-                </div>
-              </div>
+              <CompareSlider
+                beforeImage={item.beforeImage}
+                afterImage={item.afterImage}
+                altBefore={item.altBefore}
+                altAfter={item.altAfter}
+                beforeLabel={item.before}
+                afterLabel={item.after}
+              />
 
               <div className="result-copy">
                 <h3>{item.title}</h3>
