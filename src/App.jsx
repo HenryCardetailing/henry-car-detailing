@@ -1038,7 +1038,19 @@ export default function App() {
                 </p>
               </div>
 
+              <div className="specialty-embed-pills">
+                <span>Live Google Calendar</span>
+                <span>Current availability</span>
+                <span>Mobile-friendly booking</span>
+              </div>
+
               <div className="specialty-embed-frame">
+                <div className="specialty-embed-topbar" aria-hidden="true">
+                  <span className="specialty-dot specialty-dot-red" />
+                  <span className="specialty-dot specialty-dot-yellow" />
+                  <span className="specialty-dot specialty-dot-green" />
+                  <span className="specialty-embed-label">Henry Car Detailing Specialty Booking</span>
+                </div>
                 <iframe
                   src={specialtyBookingEmbedUrl}
                   title="Book specialty detailing services"
