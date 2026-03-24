@@ -646,7 +646,9 @@ export default function App() {
   const webhookUrl =
     import.meta.env.VITE_BOOKING_WEBHOOK_URL ||
     'https://script.google.com/macros/s/AKfycbwSepdK63XRnvnqV96S7A7fa_VheKrhbHvZdrMP4X5v5_gxf9mii63tMkFG4OrXxL9tDA/exec'
-  const specialtyBookingUrl = import.meta.env.VITE_SPECIALTY_BOOKING_URL || ''
+  const specialtyBookingUrl =
+    import.meta.env.VITE_SPECIALTY_BOOKING_URL ||
+    'https://calendar.google.com/calendar/u/0?cid=aGVucnljYXJkZXRhaWxpbmcwMzdAZ21haWwuY29t'
 
   const [currentPage, setCurrentPage] = useState(() =>
     typeof window === 'undefined' ? 'home' : getPageFromHash()
