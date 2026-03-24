@@ -736,7 +736,7 @@ export default function App() {
               <p className="hero-kicker">Mobile detailing for drivers who want their car to actually look cared for.</p>
               <h1>
                 Premium detailing that makes
-                <span className="hero-title-accent">daily drivers look worth showing off.</span>
+                <span className="hero-title-accent">customers cars worth showing off.</span>
               </h1>
               <p>
                 If you want strong results, cleaner interiors, sharper exteriors, and a booking
