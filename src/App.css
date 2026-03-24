@@ -720,6 +720,9 @@
   box-shadow: 0 0 0 1px rgba(12, 17, 23, 0.08);
   transform: translateX(-50%);
   pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .compare-handle {
@@ -755,6 +758,26 @@
 .compare-handle::after {
   right: 11px;
   border-left: 8px solid var(--accent-strong);
+}
+
+.compare-arrows {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(12, 17, 23, 0.08);
+  box-shadow: 0 12px 24px rgba(12, 17, 23, 0.16);
+  color: var(--accent-strong);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1;
+  z-index: 3;
 }
 
 .compare-range {
@@ -1163,6 +1186,12 @@
   .compare-stage {
     min-height: 260px;
     border-radius: 20px;
+  }
+
+  .compare-arrows {
+    gap: 6px;
+    padding: 8px 12px;
+    font-size: 13px;
   }
 
   .photo-tag {

@@ -489,6 +489,10 @@ function CompareSlider({ beforeImage, afterImage, altBefore, altAfter, beforeLab
 
         <div className="compare-divider" style={{ left: `${position}%` }}>
           <span className="compare-handle" aria-hidden="true" />
+          <span className="compare-arrows" aria-hidden="true">
+            <span>&larr;</span>
+            <span>&rarr;</span>
+          </span>
         </div>
 
         <span className="photo-tag photo-tag-left">{beforeLabel}</span>
