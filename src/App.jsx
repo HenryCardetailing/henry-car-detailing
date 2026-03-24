@@ -844,12 +844,11 @@ export default function App() {
         <div className="section-inner estimate-section">
           <div className="estimate-copy">
             <p className="eyebrow">Free Quotes</p>
-            <h2>Free estimates available, and I am willing to come check out the vehicle when needed.</h2>
+            <h2>Free estimates available, including in-person vehicle checkups when needed.</h2>
             <p>
-              If you are not sure which service fits best, or your vehicle needs a closer look
-              before pricing is confirmed, you can still reach out for a free quote first. If the
-              vehicle is especially dirty or in rough condition, you can get a clearer estimate
-              before the appointment.
+              If it is not clear which service fits best, or the vehicle needs a closer look before
+              pricing is confirmed, a free quote can come first. If the vehicle is especially dirty
+              or in rough condition, a clearer estimate can be confirmed before the appointment.
             </p>
           </div>
 
@@ -874,11 +873,11 @@ export default function App() {
               <p className="eyebrow">Choose Your Path</p>
               <h2>Request a quote for custom work, or book a specialty service separately.</h2>
             </div>
-            <p>
-              This keeps booking simple. If your vehicle needs a closer look or heavier cleanup,
-              the quote form is the better option. If you want a smaller specialty service and a
-              set time, the specialty booking page is built for that.
-            </p>
+          <p>
+            This keeps booking simple. If the vehicle needs a closer look or heavier cleanup, the
+            quote form is the better option. For smaller specialty services that fit set
+            availability, the specialty booking page is the better fit.
+          </p>
           </div>
 
           <div className="booking-path-grid">
@@ -999,8 +998,8 @@ export default function App() {
           <p className="eyebrow">Specialty Booking</p>
           <h1>Book smaller specialty services through available time slots.</h1>
           <p>
-            This page is for simpler appointments that fit better into set availability. If your
-            vehicle needs a custom quote first, use the quote form instead.
+            This page is for simpler appointments that fit set availability more easily. If the
+            vehicle needs a custom quote first, the quote form is still the better option.
           </p>
         </div>
       </section>
@@ -1014,7 +1013,7 @@ export default function App() {
                 <h2>Use specialty booking for straightforward services with clearer time blocks.</h2>
               </div>
               <p>
-                If your vehicle is in rough shape, very dirty, or needs a bigger package, the quote
+                If the vehicle is in rough shape, very dirty, or needs a bigger package, the quote
                 page is still the safer option so the work and price can be confirmed first.
               </p>
             </div>
@@ -1034,7 +1033,7 @@ export default function App() {
                 <h3>Choose from the dates and times that are currently open.</h3>
                 <p>
                   This calendar is connected to Google Calendar availability, so open times should
-                  stay up to date as appointments get booked.
+                  stay updated as appointments are booked.
                 </p>
               </div>
 
@@ -1072,8 +1071,8 @@ export default function App() {
             </ul>
 
             <div className="service-aside-note">
-              <strong>Need something custom?</strong> Use the quote form if you want a fuller
-              estimate or if you would rather have the vehicle looked at first.
+              <strong>Need something custom?</strong> The quote form is the best option for fuller
+              estimates or for vehicles that should be looked at first.
             </div>
 
             <div className="section-cta-stack">
@@ -1114,8 +1113,8 @@ export default function App() {
           <p className="eyebrow">Contact</p>
           <h1>Request your quote.</h1>
           <p>
-            Share your vehicle details and the service you want, and I will follow up as soon as
-            possible. If the vehicle is in rougher shape or needs heavier cleanup, that will be
+            Share the vehicle details and the service wanted, and a follow-up will be sent as soon
+            as possible. If the vehicle is in rougher shape or needs heavier cleanup, that will be
             reflected in the final quote.
           </p>
         </div>
