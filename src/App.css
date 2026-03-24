@@ -683,6 +683,13 @@
   border: 1px solid #dbe4ee;
   background: #e2e8f0;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  cursor: ew-resize;
+  touch-action: none;
+  user-select: none;
+}
+
+.compare-stage-dragging {
+  cursor: ew-resize;
 }
 
 .compare-image,

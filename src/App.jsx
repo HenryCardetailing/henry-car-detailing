@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './App.css'
 
 const logoSrc = '/ChatGPT Image Mar 18, 2026, 12_13_06 PM.png'
@@ -477,10 +477,48 @@ function ServicesSection({ preview = false }) {
 
 function CompareSlider({ beforeImage, afterImage, altBefore, altAfter, beforeLabel, afterLabel }) {
   const [position, setPosition] = useState(50)
+  const [isDragging, setIsDragging] = useState(false)
+  const stageRef = useRef(null)
+
+  const updatePositionFromClientX = (clientX) => {
+    const rect = stageRef.current?.getBoundingClientRect()
+    if (!rect || rect.width === 0) {
+      return
+    }
+
+    const nextPosition = ((clientX - rect.left) / rect.width) * 100
+    setPosition(Math.min(100, Math.max(0, nextPosition)))
+  }
+
+  const handlePointerDown = (event) => {
+    setIsDragging(true)
+    updatePositionFromClientX(event.clientX)
+    event.currentTarget.setPointerCapture?.(event.pointerId)
+  }
+
+  const handlePointerMove = (event) => {
+    if (!isDragging) {
+      return
+    }
+
+    updatePositionFromClientX(event.clientX)
+  }
+
+  const handlePointerUp = (event) => {
+    setIsDragging(false)
+    event.currentTarget.releasePointerCapture?.(event.pointerId)
+  }
 
   return (
     <div className="compare-slider">
-      <div className="compare-stage">
+      <div
+        ref={stageRef}
+        className={`compare-stage${isDragging ? ' compare-stage-dragging' : ''}`}
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerUp}
+        onPointerCancel={handlePointerUp}
+      >
         <img className="compare-image compare-image-base" src={beforeImage} alt={altBefore} />
 
         <div className="compare-overlay" style={{ width: `${position}%` }}>
