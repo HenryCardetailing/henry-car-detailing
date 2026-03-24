@@ -649,6 +649,9 @@ export default function App() {
   const specialtyBookingUrl =
     import.meta.env.VITE_SPECIALTY_BOOKING_URL ||
     'https://calendar.google.com/calendar/u/0?cid=aGVucnljYXJkZXRhaWxpbmcwMzdAZ21haWwuY29t'
+  const specialtyBookingEmbedUrl =
+    import.meta.env.VITE_SPECIALTY_BOOKING_EMBED_URL ||
+    'https://calendar.google.com/calendar/appointments/schedules/AcZssZ21vmJf-g41-M8UlEfssNCvn-Yj0LVNmFkIyTxvGU-qKXYaQP0jX6cEvhhxyFe4SDHGvazler_w?gv=true'
 
   const [currentPage, setCurrentPage] = useState(() =>
     typeof window === 'undefined' ? 'home' : getPageFromHash()
@@ -1024,6 +1027,26 @@ export default function App() {
                 </article>
               ))}
             </div>
+
+            <div className="specialty-embed-card">
+              <div className="specialty-embed-copy">
+                <p className="eyebrow">Live Availability</p>
+                <h3>Choose from the dates and times that are currently open.</h3>
+                <p>
+                  This calendar is connected to Google Calendar availability, so open times should
+                  stay up to date as appointments get booked.
+                </p>
+              </div>
+
+              <div className="specialty-embed-frame">
+                <iframe
+                  src={specialtyBookingEmbedUrl}
+                  title="Book specialty detailing services"
+                  className="specialty-embed"
+                  frameBorder="0"
+                />
+              </div>
+            </div>
           </div>
 
           <aside className="specialty-aside">
@@ -1044,7 +1067,7 @@ export default function App() {
             <div className="section-cta-stack">
               {specialtyBookingUrl ? (
                 <a href={specialtyBookingUrl} className="btn btn-primary" target="_blank" rel="noreferrer">
-                  Book Specialty Service
+                  Open Booking In Google Calendar
                 </a>
               ) : (
                 <div className="booking-placeholder">
