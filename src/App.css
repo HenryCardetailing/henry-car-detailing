@@ -415,6 +415,89 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
+.booking-path-grid,
+.specialty-layout {
+  display: grid;
+  gap: 24px;
+}
+
+.booking-path-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.booking-path-card,
+.booking-placeholder {
+  border-radius: 28px;
+}
+
+.booking-path-card {
+  padding: 28px;
+  background: linear-gradient(135deg, #ffffff 0%, #f4f8fd 100%);
+  border: 1px solid var(--line);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.06);
+}
+
+.booking-path-card h3 {
+  margin: 10px 0 12px;
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.booking-path-card p:last-of-type {
+  color: var(--ink-soft);
+}
+
+.booking-path-card .btn {
+  margin-top: 12px;
+}
+
+.booking-path-card-dark {
+  background:
+    radial-gradient(circle at top left, rgba(25, 168, 255, 0.18), transparent 34%),
+    linear-gradient(160deg, var(--panel-dark) 0%, var(--panel-dark-2) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+.booking-path-card-dark .eyebrow,
+.booking-path-card-dark h3,
+.booking-path-card-dark p {
+  color: inherit;
+}
+
+.specialty-layout {
+  grid-template-columns: minmax(0, 1.04fr) minmax(300px, 0.96fr);
+  align-items: start;
+}
+
+.specialty-main .feature-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.specialty-aside {
+  padding: 28px;
+  border-radius: 30px;
+  color: white;
+  background:
+    radial-gradient(circle at top left, rgba(25, 168, 255, 0.18), transparent 34%),
+    linear-gradient(160deg, var(--panel-dark) 0%, var(--panel-dark-2) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.18);
+}
+
+.specialty-aside h3 {
+  font-size: 30px;
+  margin: 0 0 14px;
+}
+
+.booking-placeholder {
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(25, 168, 255, 0.2);
+  color: #f8fafc;
+  line-height: 1.55;
+}
+
 .estimate-section {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
@@ -893,6 +976,10 @@
   color: var(--ink);
 }
 
+.contact-note {
+  margin-top: 20px;
+}
+
 .lead-form {
   display: grid;
   gap: 18px;
@@ -1032,6 +1119,8 @@
   .hero-grid,
   .section-header,
   .estimate-section,
+  .booking-path-grid,
+  .specialty-layout,
   .service-highlight-layout,
   .services-grid,
   .mobile-layout,
@@ -1083,6 +1172,7 @@
   }
 
   .highlight-grid,
+  .specialty-main .feature-grid,
   .result-photos,
   .form-grid {
     grid-template-columns: 1fr;

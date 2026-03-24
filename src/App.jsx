@@ -7,6 +7,7 @@ const pages = [
   { id: 'home', label: 'Home' },
   { id: 'mobile', label: 'Mobile Service' },
   { id: 'services', label: 'Services' },
+  { id: 'book', label: 'Book Specialty' },
   { id: 'results', label: 'Results' },
   { id: 'contact', label: 'Contact' },
 ]
@@ -360,6 +361,29 @@ const estimateHighlights = [
   'Final pricing confirmed before any work starts',
 ]
 
+const specialtyBookingServices = [
+  {
+    name: 'Headlight Restoration',
+    text: 'A focused appointment that usually works well as a set-time service.',
+  },
+  {
+    name: 'Exterior Detail',
+    text: 'Good for lighter-maintenance jobs when the vehicle does not need a custom in-person quote first.',
+  },
+  {
+    name: 'Interior Detail',
+    text: 'A strong fit for standard interior cleanups that do not involve heavy buildup, pet hair, or stains.',
+  },
+  {
+    name: 'Engine Bay Cleaning',
+    text: 'A smaller add-on style service that can be booked more easily around available time blocks.',
+  },
+  {
+    name: 'Leather Conditioning',
+    text: 'A quick specialty add-on for vehicles that need cleaner, conditioned leather surfaces.',
+  },
+]
+
 function getPageFromHash() {
   const rawHash = window.location.hash.replace(/^#\/?/, '')
 
@@ -622,6 +646,7 @@ export default function App() {
   const webhookUrl =
     import.meta.env.VITE_BOOKING_WEBHOOK_URL ||
     'https://script.google.com/macros/s/AKfycbwSepdK63XRnvnqV96S7A7fa_VheKrhbHvZdrMP4X5v5_gxf9mii63tMkFG4OrXxL9tDA/exec'
+  const specialtyBookingUrl = import.meta.env.VITE_SPECIALTY_BOOKING_URL || ''
 
   const [currentPage, setCurrentPage] = useState(() =>
     typeof window === 'undefined' ? 'home' : getPageFromHash()
@@ -837,6 +862,44 @@ export default function App() {
         </div>
       </section>
 
+      <section className="section">
+        <div className="section-inner">
+          <div className="section-header">
+            <div>
+              <p className="eyebrow">Choose Your Path</p>
+              <h2>Request a quote for custom work, or book a specialty service separately.</h2>
+            </div>
+            <p>
+              This keeps booking simple. If your vehicle needs a closer look or heavier cleanup,
+              the quote form is the better option. If you want a smaller specialty service and a
+              set time, the specialty booking page is built for that.
+            </p>
+          </div>
+
+          <div className="booking-path-grid">
+            <article className="booking-path-card">
+              <p className="eyebrow">Request a Quote</p>
+              <h3>Best for full details, deeper cleaning, or rough-condition vehicles.</h3>
+              <p>
+                If the vehicle is dirtier, larger, or needs a more custom estimate, use the quote
+                form so pricing and scope can be confirmed first.
+              </p>
+              <a href="#/contact" className="btn btn-primary">Request a Quote</a>
+            </article>
+
+            <article className="booking-path-card booking-path-card-dark">
+              <p className="eyebrow">Specialty Booking</p>
+              <h3>Best for simpler appointments that can fit into set availability.</h3>
+              <p>
+                Great for smaller specialty services like headlights, standard maintenance cleanups,
+                engine bay cleaning, or leather conditioning.
+              </p>
+              <a href="#/book" className="btn btn-secondary">See Specialty Booking</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <ServicesSection preview />
       <ResultsSection preview />
     </>
@@ -888,8 +951,8 @@ export default function App() {
               <strong>Service area:</strong> Jurupa Valley and Riverside
             </div>
             <div className="section-cta-stack">
-              <a href="#/contact" className="btn btn-primary">Book a Mobile Appointment</a>
-              <a href="tel:9513321957" className="btn btn-secondary">Call 951-332-1957</a>
+              <a href="#/contact" className="btn btn-primary">Request a Quote</a>
+              <a href="#/book" className="btn btn-secondary">Book Specialty Service</a>
             </div>
           </aside>
         </div>
@@ -923,6 +986,76 @@ export default function App() {
   )
 
   const renderServicesPage = () => <ServicesSection />
+
+  const renderBookingPage = () => (
+    <>
+      <section className="page-hero page-hero-light">
+        <div className="section-inner page-hero-inner">
+          <p className="eyebrow">Specialty Booking</p>
+          <h1>Book smaller specialty services through available time slots.</h1>
+          <p>
+            This page is for simpler appointments that fit better into set availability. If your
+            vehicle needs a custom quote first, use the quote form instead.
+          </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-inner specialty-layout">
+          <div className="specialty-main">
+            <div className="section-header section-header-stacked">
+              <div>
+                <p className="eyebrow">When This Works Best</p>
+                <h2>Use specialty booking for straightforward services with clearer time blocks.</h2>
+              </div>
+              <p>
+                If your vehicle is in rough shape, very dirty, or needs a bigger package, the quote
+                page is still the safer option so the work and price can be confirmed first.
+              </p>
+            </div>
+
+            <div className="feature-grid">
+              {specialtyBookingServices.map((service) => (
+                <article key={service.name} className="feature-card">
+                  <h3>{service.name}</h3>
+                  <p>{service.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <aside className="specialty-aside">
+            <p className="service-aside-label">Booking Notes</p>
+            <h3>Book specialty services online, and request quotes for the bigger jobs.</h3>
+            <ul className="service-aside-list">
+              <li>Best for standard appointments with set availability</li>
+              <li>Use quote requests for dirtier or rough-condition vehicles</li>
+              <li>Full details and deep cleaning may still need custom confirmation</li>
+              <li>Final pricing can still change if the vehicle needs more work than expected</li>
+            </ul>
+
+            <div className="service-aside-note">
+              <strong>Need something custom?</strong> Use the quote form if you want a fuller
+              estimate or if you would rather have the vehicle looked at first.
+            </div>
+
+            <div className="section-cta-stack">
+              {specialtyBookingUrl ? (
+                <a href={specialtyBookingUrl} className="btn btn-primary" target="_blank" rel="noreferrer">
+                  Book Specialty Service
+                </a>
+              ) : (
+                <div className="booking-placeholder">
+                  Your Google Calendar booking link will go here as soon as it is connected.
+                </div>
+              )}
+              <a href="#/contact" className="btn btn-secondary btn-dark">Request a Quote Instead</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </>
+  )
 
   const renderResultsPage = () => (
     <>
@@ -961,12 +1094,21 @@ export default function App() {
               the type of work you want done.
             </p>
 
+            <div className="service-aside-note contact-note">
+              <strong>Want a simpler booking instead?</strong> If you are trying to book a smaller
+              specialty service with set availability, head to the specialty booking page.
+            </div>
+
             <div className="contact-details">
               <p><strong>Phone:</strong> 951-332-1957</p>
               <p><strong>Service Area:</strong> Jurupa Valley / Riverside</p>
               <p><strong>Availability:</strong> By appointment</p>
               <p><strong>Business:</strong> Henry Car Detailing LLC</p>
               <p><strong>Quotes:</strong> Free estimates available</p>
+            </div>
+
+            <div className="section-cta-row">
+              <a href="#/book" className="btn btn-dark">Go To Specialty Booking</a>
             </div>
           </div>
 
@@ -1090,6 +1232,8 @@ export default function App() {
         return renderMobilePage()
       case 'services':
         return renderServicesPage()
+      case 'book':
+        return renderBookingPage()
       case 'results':
         return renderResultsPage()
       case 'contact':
