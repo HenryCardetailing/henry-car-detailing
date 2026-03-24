@@ -339,28 +339,6 @@ const spotlightShots = [
   },
 ]
 
-const featuredServices = [
-  {
-    title: 'Exterior upkeep',
-    text: 'For vehicles that need a polished hand wash, wheel cleanup, and a stronger finished look.',
-  },
-  {
-    title: 'Interior deep cleaning',
-    text: 'For stains, pet hair, spills, and cabins that need more than a quick vacuum.',
-  },
-  {
-    title: 'Complete detail packages',
-    text: 'For customers who want the inside and outside handled in one appointment.',
-  },
-]
-
-const estimateHighlights = [
-  'Free quotes and estimates',
-  'Willing to check out the vehicle in person when needed',
-  'Vehicles in rougher or dirtier condition may need a higher final quote',
-  'Final pricing confirmed before any work starts',
-]
-
 const specialtyBookingServices = [
   {
     name: 'Headlight Restoration',
@@ -769,13 +747,13 @@ export default function App() {
                 <span className="hero-title-accent">customers cars worth showing off.</span>
               </h1>
               <p>
-                If you want strong results, cleaner interiors, sharper exteriors, and a booking
-                process that feels simple from the first message, this service is built for you.
+                Cleaner interiors, sharper exteriors, and simple booking for drivers in Jurupa
+                Valley and Riverside.
               </p>
 
               <div className="hero-buttons">
                 <a href="#/services" className="btn btn-primary">See Services</a>
-                <a href="#/contact" className="btn btn-secondary">Request a Quote</a>
+                <a href="#/contact" className="btn btn-secondary">Request Quote</a>
               </div>
 
               <div className="hero-microproof">
@@ -816,68 +794,13 @@ export default function App() {
         <div className="section-inner">
           <div className="section-header">
             <div>
-              <p className="eyebrow">Mobile Detailing</p>
-              <h2>A cleaner site flow, and a detailing service that comes to you</h2>
+              <p className="eyebrow">Book Fast</p>
+              <h2>Pick the easiest way to book.</h2>
             </div>
             <p>
-              If you want the convenience of mobile service without giving up a premium result, you
-              can head to the mobile detailing page to see exactly how appointments work.
+              Bigger jobs go through quotes. Smaller specialty services can be booked into open
+              time slots.
             </p>
-          </div>
-
-          <div className="feature-grid">
-            {featuredServices.map((item) => (
-              <article key={item.title} className="feature-card">
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
-            ))}
-          </div>
-
-          <div className="section-cta-row">
-            <a href="#/mobile" className="btn btn-primary">See Mobile Service Info</a>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-emphasis">
-        <div className="section-inner estimate-section">
-          <div className="estimate-copy">
-            <p className="eyebrow">Free Quotes</p>
-            <h2>Free estimates available, including in-person vehicle checkups when needed.</h2>
-            <p>
-              If it is not clear which service fits best, or the vehicle needs a closer look before
-              pricing is confirmed, a free quote can come first. If the vehicle is especially dirty
-              or in rough condition, a clearer estimate can be confirmed before the appointment.
-            </p>
-          </div>
-
-          <div className="estimate-card">
-            <ul className="estimate-list">
-              {estimateHighlights.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-
-            <div className="section-cta-row">
-              <a href="#/contact" className="btn btn-primary">Request a Free Estimate</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="section-inner">
-          <div className="section-header">
-            <div>
-              <p className="eyebrow">Choose Your Path</p>
-              <h2>Request a quote for custom work, or book a specialty service separately.</h2>
-            </div>
-          <p>
-            This keeps booking simple. If the vehicle needs a closer look or heavier cleanup, the
-            quote form is the better option. For smaller specialty services that fit set
-            availability, the specialty booking page is the better fit.
-          </p>
           </div>
 
           <div className="booking-path-grid">
@@ -885,8 +808,7 @@ export default function App() {
               <p className="eyebrow">Request a Quote</p>
               <h3>Best for full details, deeper cleaning, or rough-condition vehicles.</h3>
               <p>
-                If the vehicle is dirtier, larger, or needs a more custom estimate, use the quote
-                form so pricing and scope can be confirmed first.
+                Best when the vehicle needs a custom estimate first.
               </p>
               <a href="#/contact" className="btn btn-primary">Request a Quote</a>
             </article>
@@ -895,8 +817,8 @@ export default function App() {
               <p className="eyebrow">Specialty Booking</p>
               <h3>Best for simpler appointments that can fit into set availability.</h3>
               <p>
-                Great for smaller specialty services like headlights, standard maintenance cleanups,
-                engine bay cleaning, or leather conditioning.
+                Great for headlights, standard cleanups, engine bay cleaning, and leather
+                conditioning.
               </p>
               <a href="#/book" className="btn btn-secondary">See Specialty Booking</a>
             </article>
@@ -911,13 +833,13 @@ export default function App() {
 
   const renderMobilePage = () => (
     <>
-      <section className="page-hero">
-        <div className="section-inner page-hero-inner">
-          <p className="eyebrow">Mobile Service</p>
-          <h1>Mobile detailing that comes to you.</h1>
-          <p>Everything here is focused on how the appointment works and what to expect.</p>
-        </div>
-      </section>
+        <section className="page-hero">
+          <div className="section-inner page-hero-inner">
+            <p className="eyebrow">Mobile Service</p>
+            <h1>Mobile detailing that comes to you.</h1>
+            <p>Simple, mobile, and built around your day.</p>
+          </div>
+        </section>
 
       <section className="section">
         <div className="section-inner mobile-layout">
@@ -928,8 +850,7 @@ export default function App() {
                 <h2>Convenience that still feels premium</h2>
               </div>
               <p>
-                Mobile service should feel easy, organized, and professional, so you can book with
-                confidence and know what to expect before the appointment starts.
+                Book around your day and still get a premium result.
               </p>
             </div>
 
@@ -964,15 +885,12 @@ export default function App() {
 
       <section className="process section">
         <div className="section-inner">
-          <div className="section-header">
-            <div>
-              <p className="eyebrow">How Mobile Booking Works</p>
-              <h2>Simple from first contact to finished detail</h2>
-            </div>
-            <p>
-              If you want a cleaner vehicle without guessing how the appointment works, this gives
-              you a quick step-by-step idea of what happens next.
-            </p>
+            <div className="section-header">
+              <div>
+                <p className="eyebrow">How Mobile Booking Works</p>
+                <h2>Simple from first contact to finished detail</h2>
+              </div>
+            <p>A quick look at how the appointment works.</p>
           </div>
 
           <div className="process-grid">
@@ -993,16 +911,13 @@ export default function App() {
 
   const renderBookingPage = () => (
     <>
-      <section className="page-hero page-hero-light">
-        <div className="section-inner page-hero-inner">
-          <p className="eyebrow">Specialty Booking</p>
-          <h1>Book smaller specialty services through available time slots.</h1>
-          <p>
-            This page is for simpler appointments that fit set availability more easily. If the
-            vehicle needs a custom quote first, the quote form is still the better option.
-          </p>
-        </div>
-      </section>
+        <section className="page-hero page-hero-light">
+          <div className="section-inner page-hero-inner">
+            <p className="eyebrow">Specialty Booking</p>
+            <h1>Book smaller specialty services through available time slots.</h1>
+            <p>Best for simpler services that fit set availability.</p>
+          </div>
+        </section>
 
       <section className="section">
         <div className="section-inner specialty-layout">
@@ -1013,8 +928,7 @@ export default function App() {
                 <h2>Use specialty booking for straightforward services with clearer time blocks.</h2>
               </div>
               <p>
-                If the vehicle is in rough shape, very dirty, or needs a bigger package, the quote
-                page is still the safer option so the work and price can be confirmed first.
+                For rough-condition vehicles or bigger packages, use the quote page first.
               </p>
             </div>
 
@@ -1032,8 +946,7 @@ export default function App() {
                 <p className="eyebrow">Live Availability</p>
                 <h3>Choose from the dates and times that are currently open.</h3>
                 <p>
-                  This calendar is connected to Google Calendar availability, so open times should
-                  stay updated as appointments are booked.
+                  Live Google Calendar availability updates as appointments are booked.
                 </p>
               </div>
 
@@ -1062,7 +975,7 @@ export default function App() {
 
           <aside className="specialty-aside">
             <p className="service-aside-label">Booking Notes</p>
-            <h3>Book specialty services online, and request quotes for the bigger jobs.</h3>
+            <h3>Book smaller jobs here and send bigger jobs through quotes.</h3>
             <ul className="service-aside-list">
               <li>Best for standard appointments with set availability</li>
               <li>Use quote requests for dirtier or rough-condition vehicles</li>
@@ -1071,8 +984,7 @@ export default function App() {
             </ul>
 
             <div className="service-aside-note">
-              <strong>Need something custom?</strong> The quote form is the best option for fuller
-              estimates or for vehicles that should be looked at first.
+              <strong>Need something custom?</strong> Use the quote form for a fuller estimate.
             </div>
 
             <div className="section-cta-stack">
@@ -1095,40 +1007,36 @@ export default function App() {
 
   const renderResultsPage = () => (
     <>
-      <section className="page-hero page-hero-light">
-        <div className="section-inner page-hero-inner">
-          <p className="eyebrow">Results</p>
-          <h1>Before-and-after results.</h1>
-          <p>A quick look at the kind of cleanup and finish you can expect.</p>
-        </div>
-      </section>
+        <section className="page-hero page-hero-light">
+          <div className="section-inner page-hero-inner">
+            <p className="eyebrow">Results</p>
+            <h1>Before-and-after results.</h1>
+            <p>Quick proof of the kind of results customers can expect.</p>
+          </div>
+        </section>
       <ResultsSection />
     </>
   )
 
   const renderContactPage = () => (
     <>
-      <section className="page-hero page-hero-light">
-        <div className="section-inner page-hero-inner">
-          <p className="eyebrow">Contact</p>
-          <h1>Request your quote.</h1>
-          <p>
-            Share the vehicle details and the service wanted, and a follow-up will be sent as soon
-            as possible. If the vehicle is in rougher shape or needs heavier cleanup, that will be
-            reflected in the final quote.
-          </p>
-        </div>
-      </section>
+        <section className="page-hero page-hero-light">
+          <div className="section-inner page-hero-inner">
+            <p className="eyebrow">Contact</p>
+            <h1>Request your quote.</h1>
+            <p>
+              Share the vehicle details and the service wanted. Heavier cleanup or rough-condition
+              vehicles may cost more than the starting price.
+            </p>
+          </div>
+        </section>
 
       <section className="contact">
         <div className="contact-inner">
           <div className="contact-copy">
             <p className="eyebrow">Book Your Appointment</p>
             <h2>Request a callback</h2>
-            <p>
-              If you want a quote, this is the fastest way to send over your vehicle details and
-              the type of work you want done.
-            </p>
+            <p>The fastest way to send over vehicle details and get pricing confirmed.</p>
 
             <div className="service-aside-note contact-note">
               <strong>Want a simpler booking instead?</strong> If you are trying to book a smaller
@@ -1304,33 +1212,6 @@ export default function App() {
       </header>
 
       <main>{renderCurrentPage()}</main>
-
-      {currentPage === 'home' ? (
-        <section className="info-band">
-          <div className="info-grid">
-            <div className="info-card">
-              <h3>Quality you can see</h3>
-              <p>
-                Every detail is done with care so your vehicle looks cleaner, glossier, and better
-                cared for than a quick drive-through wash can deliver.
-              </p>
-            </div>
-            <div className="info-card">
-              <h3>Mobile convenience</h3>
-              <p>
-                Book around your day and get the kind of result that still feels premium and worth it.
-              </p>
-            </div>
-            <div className="info-card">
-              <h3>Local service you can trust</h3>
-              <p>
-                Henry Car Detailing serves Jurupa Valley and Riverside with dependable appointment
-                service focused on giving your vehicle the attention it deserves.
-              </p>
-            </div>
-          </div>
-        </section>
-      ) : null}
 
       <div className="mobile-cta">
         <a href="tel:9513321957" className="mobile-cta-link mobile-cta-call">Call Now</a>
